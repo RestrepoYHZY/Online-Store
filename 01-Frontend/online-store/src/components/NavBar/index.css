@@ -1,0 +1,14 @@
+.link{
+    color: black;
+  }
+  .link:hover{
+    text-decoration: underline;
+  }
+  
+  .link:active{
+    color: #fff;
+  }
+  
+  .link:focus{
+    color: #5f0185;
+  }
