@@ -1,10 +1,16 @@
-import { Typography } from '@mui/material'
-import React from 'react'
+import { Typography } from "@mui/material";
+import React from "react";
+import ModalNew from "../components/Products/ModalNew";
+import TableProducts from "../components/Products/TableProducts";
 
 const Products = () => {
   return (
-    <Typography variant='h1' >HOLA</Typography>
-  )
-}
+    <>
+      <Typography variant="h5">Products</Typography>
+      <ModalNew />
+      <TableProducts />
+    </>
+  );
+};
 
-export default Products
+export default Products;
