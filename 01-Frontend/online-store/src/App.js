@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 const App = () => {
   return (<>
     <NavBarPage />
-    <Box style={{marginTop:'8em'}}>
+    <Box style={{marginTop:'4em'}}>
       <Routes>
         {/* <Route path="/" element={ <NewInvoce /> } </Route> */}
         <Route path="/NewInvoce" element={ <NewInvoce /> } />

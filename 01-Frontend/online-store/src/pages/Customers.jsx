@@ -4,7 +4,7 @@ import React from 'react'
 const Customers = () => {
   return (
     <>
-    <Typography variant='h1'></Typography>
+    <Typography variant='h1'>Estoy en customer</Typography>
     </>
   )
 }
