@@ -12,17 +12,23 @@ const ModalNew = () => {
   };
   return (
     <>
-      <Button
-        onClick={() => abrirCerrarModal()}
-        variant="contained"
-        color="primary"
-      >
-        New Product
-      </Button>
+     <Box align='right'>
+       <Button
+       
+         onClick={() => abrirCerrarModal()}
+         variant="contained"
+         color="primary"
+       >
+         New Product
+       </Button>
+     </Box>
 
       <Modal open={modal} onClose={abrirCerrarModal}>
         <Box sx={styleModal}>
-            <Typography variant= "subtitle1">New Product</Typography>
+
+           <Box align='center'>
+             <Typography variant= "subtitle1">New Product</Typography>
+           </Box >
           <FormNew />
         </Box>
       </Modal>

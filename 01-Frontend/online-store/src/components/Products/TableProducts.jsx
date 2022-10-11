@@ -15,7 +15,7 @@ import {
 const TableProducts = () => {
   return (
     <>
-    <Paper sx={{ width: "98%" }} elevation={0} style={{ margin: "1%" }}>
+    <Paper sx={{ width: "100%" }} elevation={0} style={{marginTop: '1em'}} >
         <TableContainer>
           <Table sx={{ minWidth: 650 }}>
             <TableHead>

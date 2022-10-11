@@ -12,12 +12,12 @@ const obj = {
     }
 
   },
-  // typography: {
-  //   fontFamily: [
-  //     'PT Sans', 
-  //     "sans-serif"      
-  //   ].join(','),
-  // },
+  typography: {
+    fontFamily: [
+      'Inter Tight', 'sans-serif'
+    ].join(','),
+    
+  }
   
   
   }
@@ -25,13 +25,14 @@ const obj = {
 
 const styleModal = {
   position: "absolute",
-  width: '80%',
+  width: '50%',
   backgroundColor: "#F2F2F2",
   padding: "16px 32px 24px",
-  top: "50%",
+  top: "45%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   borderRadius: "8px"
 }
+
 
 export { obj, styleModal };
