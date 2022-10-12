@@ -1,8 +1,13 @@
 import React from 'react'
+import DatailInvoice from '../components/ListInvoice/DatailInvoice'
 
 const ListInvoce = () => {
   return (
-    <div>ListInvoce</div>
+  <>
+   <div>ListInvoce</div>
+    <DatailInvoice/>
+  </>
+   
   )
 }
 
