@@ -7,7 +7,7 @@ import FormNew from "./FormNew";
 const ModalNew = () => {
   const [modal, setModal] = useState(false);
 
-  const abrirCerrarModal = () => {
+  const openCloseModal = () => {
     setModal(!modal);
   };
   return (
@@ -15,7 +15,7 @@ const ModalNew = () => {
      <Box align='right'>
        <Button
        
-         onClick={() => abrirCerrarModal()}
+         onClick={() => openCloseModal()}
          variant="contained"
          color="primary"
        >
@@ -23,7 +23,7 @@ const ModalNew = () => {
        </Button>
      </Box>
 
-      <Modal open={modal} onClose={abrirCerrarModal}>
+      <Modal open={modal} onClose={openCloseModal}>
         <Box sx={styleModal}>
 
            <Box align='center'>
