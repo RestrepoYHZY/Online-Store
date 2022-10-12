@@ -25,7 +25,6 @@ const ModalNew = () => {
 
       <Modal open={modal} onClose={openCloseModal}>
         <Box sx={styleModal}>
-
            <Box align='center'>
              <Typography variant= "subtitle1">New Product</Typography>
            </Box >

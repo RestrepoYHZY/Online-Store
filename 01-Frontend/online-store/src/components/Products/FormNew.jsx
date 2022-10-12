@@ -21,7 +21,7 @@ const validationSchema = Yup.object().shape({
    .trim(),
    provider: Yup.string()
    .required("Sorry, this is required")
-   .trim(),
+   .trim()
 
 });
 
