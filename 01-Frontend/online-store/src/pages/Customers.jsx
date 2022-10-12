@@ -1,12 +1,17 @@
-import { Typography } from '@mui/material'
-import React from 'react'
+import { Box, Typography } from "@mui/material";
+import React from "react";
+import TableCustomers from "../components/Customers/TableCustomers";
 
 const Customers = () => {
   return (
     <>
-    <Typography variant='h1'>Estoy en customer</Typography>
-    </>
-  )
-}
+      <Box style={{ margin: "2em", marginTop: "5em" }}>
+        <Typography variant="h5">Customers</Typography>
 
-export default Customers
+        <TableCustomers/>
+      </Box>
+    </>
+  );
+};
+
+export default Customers;
