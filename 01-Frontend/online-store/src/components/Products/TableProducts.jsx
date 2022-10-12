@@ -18,7 +18,7 @@ const TableProducts = () => {
     <Paper sx={{ width: "100%" }} elevation={0} style={{marginTop: '1em'}} >
         <TableContainer>
           <Table sx={{ minWidth: 650 }}>
-            <TableHead>
+            <TableHead> 
               <TableRow>
                 <TableCell>Code</TableCell>
                 <TableCell align="center">Product</TableCell>
