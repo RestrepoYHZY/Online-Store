@@ -19,16 +19,16 @@ const ModalNew = () => {
          variant="contained"
          color="primary"
        >
-         New Product
+         New Provider
        </Button>
      </Box>
 
       <Modal open={modal} onClose={openCloseModal}>
         <Box sx={styleModal}>
            
-             <Typography variant= "h6" align='center'>New Product</Typography>
+             <Typography variant= "h6" align='center'>New Provider</Typography>
            
-          <FormNew />
+           <FormNew /> 
         </Box>
       </Modal>
     </>

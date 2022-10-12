@@ -22,9 +22,7 @@ const ModalNew = () => {
         </Box>
         <Modal open={modal} onClose={openCloseModal}>
           <Box sx={styleModal}>
-            <Box align="center">
-              <Typography variant="subtitle1">New Customer</Typography>
-            </Box>
+          <Typography variant= "h6" align='center'>New Customer</Typography>
           <FormNew />
         </Box>
       </Modal>
