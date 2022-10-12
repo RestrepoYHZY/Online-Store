@@ -26,15 +26,15 @@ const FormInvoice = () => {
       >
         {() => (
           <Form>
-            <Grid container>
-              <Grid xs={10}>
-                <Grid container>
-                  <Grid xs={4}>
+            <Grid item container>
+              <Grid  item xs={10}>
+                <Grid item container>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="date">Date: </InputLabel>
                     <Field type="date" name="date"  />
                     <ErrorMessage name="date"  />
                   </Grid>
-                  <Grid xs={4}>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="customer">Customer: </InputLabel>
                     <Field as="select" name="customer" >
                       <option value="">Choose Customer</option>
@@ -43,7 +43,7 @@ const FormInvoice = () => {
                     </Field>
                     <ErrorMessage name="customer"  />
                   </Grid>
-                  <Grid xs={4}>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="product">Products: </InputLabel>
                     <Field as="select" name="product" >
                       <option value="">Choose Product</option>
@@ -52,14 +52,14 @@ const FormInvoice = () => {
                     </Field>
                     <ErrorMessage name="product"  />
                   </Grid>
-                  <Grid xs={4}>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="price">Price: </InputLabel>
                     <Field
                       name="price"
                     type="number"
                     />
                   </Grid>
-                  <Grid xs={4}>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="amount">Amount: </InputLabel>
                     <Field
                       name="amount"
@@ -67,7 +67,7 @@ const FormInvoice = () => {
                     />
                   </Grid>
                   
-                  <Grid xs={4}>
+                  <Grid item xs={4}>
                     <InputLabel htmlFor="subtotal">Subtotal: </InputLabel>
                     <Field
                       type="number"
@@ -77,7 +77,7 @@ const FormInvoice = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid xs={1.5} alignSelf="center" justifySelf="center">
+              <Grid item xs={1.5} alignSelf="center" justifySelf="center">
                 <Button type="submit" variant="contained">Submit</Button>
               </Grid>
             </Grid>

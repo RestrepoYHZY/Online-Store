@@ -8,6 +8,7 @@ import {
   IconButton,
   TableBody,
   Button,
+  Box,
 } from "@mui/material";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 
@@ -56,11 +57,12 @@ const TableInvoice = () => {
             </TableBody>
           </Table>
         </TableContainer>
-
-        <Button type="submit" variant="contained">
-          Submit
-        </Button>
       </Paper>
+      <Box align="right">
+        <Button type="submit" variant="contained">
+         Save Invoice
+        </Button>
+      </Box>
     </>
   );
 };
