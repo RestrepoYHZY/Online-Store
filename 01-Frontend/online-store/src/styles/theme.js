@@ -33,6 +33,15 @@ const styleModal = {
   transform: "translate(-50%, -50%)",
   borderRadius: "8px"
 }
+const styleModalInvoice = {
+  position: "absolute",
+  width: '70%',
+  backgroundColor: "#F2F2F2",
+  padding: "16px 32px 24px",
+  top: "45%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  borderRadius: "8px"
+}
 
-
-export { obj, styleModal };
+export { obj, styleModal,styleModalInvoice };
