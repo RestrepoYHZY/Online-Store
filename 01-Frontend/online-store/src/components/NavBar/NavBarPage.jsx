@@ -82,46 +82,41 @@ const NavBarPage = () => {
                   }}
                   to="/ListInvoce"
                 >
-                  List Invoice
+                  List Invoce
                 </Link>
               </MenuItem>
             </Menu>
-            <Typography variant="h6">
-              <Link
-                style={{
-                  color: "black",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                }}
-                to="/Products"
-              >
-                Products
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link
-                style={{
-                  color: "black",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                }}
-                to="/Customers"
-              >
-                Costumers
-              </Link>
-            </Typography>
-            <Typography variant="h6">
-              <Link
-                style={{
-                  color: "black",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                }}
-                to="/Providers"
-              >
-                Providers
-              </Link>
-            </Typography>
+
+            <Link
+              style={{
+                color: "black",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+              to="/Products"
+            >
+              Products
+            </Link>
+            <Link
+              style={{
+                color: "black",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+              to="/Customers"
+            >
+              Costumers
+            </Link>
+            <Link
+              style={{
+                color: "black",
+                textDecoration: "none",
+                cursor: "pointer",
+              }}
+              to="/Providers"
+            >
+              Providers
+            </Link>
           </Stack>
         </Toolbar>
       </AppBar>
