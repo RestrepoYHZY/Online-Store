@@ -7,7 +7,7 @@ const validationSchema = Yup.object().shape({
   customer: Yup.string().required("Sorry, this is required ").trim(),
   product: Yup.string().required("Sorry, this is required").trim(),
 });
-const FormInvoice = () => {
+const Form = () => {
   return (
     <>
       <Formik
@@ -88,4 +88,4 @@ const FormInvoice = () => {
   );
 };
 
-export default FormInvoice;
+export default Form;
