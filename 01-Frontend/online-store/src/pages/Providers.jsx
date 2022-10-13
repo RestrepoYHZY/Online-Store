@@ -6,7 +6,7 @@ const Providers = () => {
   return (
     <>
     <Box style={{ margin: "2em" , marginTop: "5em"}}>
-      <Typography variant="h5" >Providers</Typography>
+      <Typography variant="h5" >Providers </Typography>
       <ModalNew/>
      <TableProviders/>
      

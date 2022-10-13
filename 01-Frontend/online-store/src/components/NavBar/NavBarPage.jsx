@@ -82,7 +82,7 @@ const NavBarPage = () => {
                   }}
                   to="/ListInvoce"
                 >
-                  List Invoce
+                  List Invoice
                 </Link>
               </MenuItem>
             </Menu>

@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const ListInvoce = () => {
+const ListInvoice = () => {
   return (
   <>
    <div>ListInvoce</div>
@@ -11,4 +11,4 @@ const ListInvoce = () => {
   )
 }
 
-export default ListInvoce
+export default ListInvoice

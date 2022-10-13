@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     IconButton,
     Paper,
@@ -10,8 +10,25 @@ import {
     TableRow,
   } from "@mui/material";
 
-  import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
-const TableProviders = () => {
+import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
+import { getProviders } from '../../actions/providers.action';
+
+
+  const TableProviders = () => {
+
+    const getProvidersData= async ()=>{
+      try{
+        const data = await getProviders();
+        console.log(data)
+      }catch(error){
+        console.log(error);
+      };
+    };
+
+    useEffect(()=>{
+      getProvidersData();
+    }, []);
+
   return (
     <>
     <Paper sx={{ width: "100%" }} elevation={0} style={{marginTop: '1em'}} >
