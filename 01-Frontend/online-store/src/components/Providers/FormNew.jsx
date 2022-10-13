@@ -7,6 +7,7 @@ import * as Yup from "yup";
 const validationSchema = Yup.object().shape({
   provider: Yup.string().required("Sorry, this is required").trim(),
   nit: Yup.string().required("Sorry, this is required").trim(),
+  indicative: Yup.string().required("Sorry, this is required").trim(),
   address: Yup.string().required("Sorry, this is required").trim(),
   phoneNumber: Yup.string().required("Sorry, this is required").trim(),
 });
@@ -18,6 +19,7 @@ const FormNew = () => {
         initialValues={{
           provider: "",
           nit: "",
+          indicative: "",
           address: "",
           phoneNumber: "",
         }}
@@ -44,6 +46,11 @@ const FormNew = () => {
                 <InputLabel htmlFor="address">Address</InputLabel>
                 <Field type="string" name="address" />
                 <ErrorMessage name="address" />
+              </Stack>
+              <Stack>
+                <InputLabel htmlFor="indicative">Indicative</InputLabel>
+                <Field type="number" name="indicative" />
+                <ErrorMessage name="indicative" />
               </Stack>
               <Stack>
                 <InputLabel htmlFor="phoneNumber">Phone Number </InputLabel>
