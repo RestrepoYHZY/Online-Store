@@ -1,13 +1,8 @@
 import React from 'react'
 
-
 const ListInvoce = () => {
   return (
-  <>
-   <div>ListInvoce</div>
- 
-  </>
-   
+    <div>ListInvoce</div>
   )
 }
 

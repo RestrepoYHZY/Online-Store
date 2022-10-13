@@ -1,20 +1,10 @@
-import { Box, Typography } from "@mui/material";
-import React from "react";
-import ModalNew from "../components/Products/ModalNew";
-import TableProducts from "../components/Products/TableProducts";
+import { Typography } from '@mui/material'
+import React from 'react'
 
 const Products = () => {
   return (
-    <>
-      <Box style={{ margin: "2em" , marginTop: "5em"}}>
-        <Typography variant="h5" >Products</Typography>
+    <Typography variant='h1' >HOLA</Typography>
+  )
+}
 
-        <ModalNew />
-        <TableProducts />
-      </Box>
-    </>
-  );
-};
-
-export default Products;
- 
+export default Products

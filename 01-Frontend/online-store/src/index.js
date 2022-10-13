@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createTheme, ThemeProvider } from '@mui/material';
-import { obj} from './styles/theme';
+import { obj } from './styles/theme';
 
 const theme = createTheme(obj);
 

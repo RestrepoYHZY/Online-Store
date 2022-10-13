@@ -1,7 +1,7 @@
 import NavBarPage from "./components/NavBar/NavBarPage";
 
 import NewInvoce from './pages/NewInvoce';
-import Listinvoce from './pages/Listinvoce';
+import ListInvoce from './pages/ListInvoce';
 import Products from './pages/Products';
 import Customers from './pages/Customers';
 import Providers from './pages/Providers';
@@ -17,7 +17,7 @@ const App = () => {
       <Routes>
         {/* <Route path="/" element={ <NewInvoce /> } </Route> */}
         <Route path="/NewInvoce" element={ <NewInvoce /> } />
-          <Route path="/Listinvoce" element={ <Listinvoce /> } />
+          <Route path="/ListInvoce" element={ <ListInvoce /> } />
           <Route path="/Products" element={ <Products /> } />
           <Route path="/Customers" element={ <Customers /> } />
           <Route path="/Providers" element={ <Providers /> } />
