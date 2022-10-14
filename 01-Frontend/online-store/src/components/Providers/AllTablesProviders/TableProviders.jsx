@@ -38,7 +38,7 @@ import TableBodyProviders from './TableBodyProviders';
           <Table sx={{ minWidth: 650 }}>
             <TableHead> 
               <TableRow>
-                <TableCell>Code</TableCell>
+                <TableCell align="center">Code</TableCell>
                 <TableCell align="center">Provider</TableCell>
                 <TableCell align="center">Nit</TableCell>
                 <TableCell align="center">Address</TableCell>
@@ -52,10 +52,10 @@ import TableBodyProviders from './TableBodyProviders';
                 <TableBodyProviders 
                 key={item.id}
                 id={item.id}
-                name={item.name}
+                provider={item.provider}
                 nit={item.nit}
                 address={item.address}
-                phone={item.phone}
+                phoneNumber={item.phoneNumber}
                 />
 
               ))}

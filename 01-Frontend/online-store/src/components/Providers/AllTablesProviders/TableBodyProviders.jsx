@@ -8,15 +8,15 @@ import {
 
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 
-const TableBodyProviders = ({ id:idProvider, name, nit, address, phone}) => {
+const TableBodyProviders = ({ id:idProvider, provider, nit, address, phoneNumber}) => {
   return (
     <>
       <TableRow>
         <TableCell align="center">{idProvider}</TableCell>
-        <TableCell align="center">{name}</TableCell>
+        <TableCell align="center">{provider}</TableCell>
         <TableCell align="center">{nit}</TableCell>
         <TableCell align="center">{address}</TableCell>
-        <TableCell align="center">{phone}</TableCell>
+        <TableCell align="center">{phoneNumber}</TableCell>
         <TableCell align="center">
           <Tooltip title="Edit">
           <IconButton

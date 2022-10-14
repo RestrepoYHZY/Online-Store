@@ -2,54 +2,51 @@
   "providers": [
     {
       "id": 1,
-      "name": "Distrubidor A",
+      "provider": "Distrubidor A",
       "nit": "9000000-1",
       "address": "calle falsa 123",
-      "phone": "3135558888"
+      "phoneNumber": "3135558888"
     },
     {
       "id": 2,
-      "name": "Distrubidor B",
+      "provider": "Distrubidor B",
       "nit": "9000000-2",
       "address": "calle falsa 1234",
-      "phone": "3135558889"
+      "phoneNumber": "3135558889"
     },
     {
       "id": 3,
-      "name": "Distrubidor c",
+      "provider": "Distrubidor c",
       "nit": "9000000-3",
       "address": "calle falsa 12345",
-      "phone": "3135558810"
+      "phoneNumber": "3135558810"
     },
     {
-      "name": "Distrubidor D",
+      "provider": "Distrubidor D",
       "nit": "9000000-4",
       "address": "calle falsa 123",
-      "phone": "3135558811",
+      "phoneNumber": "3135558811",
       "id": 4
     },
     {
-      "name": "Distrubidor D",
+      "provider": "Distrubidor D",
       "nit": "9000000-4",
       "address": "calle falsa 123",
-      "phone": "3135558811",
+      "phoneNumber": "3135558811",
       "id": 5
     },
     {
-      "id": 6
-    },
-    {
-      "name": "carlitos",
+      "provider": "carlitos",
       "nit": "90000-1",
       "address": "Calle falsa 123",
-      "phone": "+58 3132222555",
+      "phoneNumber": "+58 3132222555",
       "id": 7
     },
     {
-      "name": "pepito",
+      "provider": "pepito",
       "nit": "90000-4",
       "address": "l;askjdlkasdj",
-      "phone": "+59 31322222222",
+      "phoneNumber": "+59 31322222222",
       "id": 8
     },
     {
@@ -60,18 +57,6 @@
       "id": 9
     },
     {
-      "nit": "343",
-      "address": "calle",
-      "phone": "+57 undefined",
-      "id": 10
-    },
-    {
-      "nit": "434434",
-      "address": "calle",
-      "phoneNumber": "+57 3197842892",
-      "id": 11
-    },
-    {
       "provider": "Yhaizley",
       "nit": "343",
       "address": "calle",
@@ -79,10 +64,18 @@
       "id": 12
     },
     {
-      "nit": "ee",
-      "address": "calle",
-      "phone": "+57 undefined",
+      "provider": "Yhaizley",
+      "nit": "r4444",
+      "address": "44",
+      "phoneNumber": "+43 3197842892",
       "id": 13
+    },
+    {
+      "provider": "reer",
+      "nit": "343",
+      "address": "calle",
+      "phoneNumber": "+45 3197842892",
+      "id": 14
     }
   ],
   "customers": [

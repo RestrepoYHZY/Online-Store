@@ -38,12 +38,13 @@ const FormNew = () => {
 
         onSubmit={(values)=>{
           const dataToSend = {
-            "name":values.name,
+            "provider":values.provider,
             "nit":values.nit,
             "address":values.address,
-            "phone":`+${values.indicative} ${values.phone}`
+            "phoneNumber":`+${values.indicative} ${values.phoneNumber}`
           };
           sendProviders(dataToSend);
+          console.log(dataToSend);
         }}
       >
         {() => (
