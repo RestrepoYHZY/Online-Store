@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
+import TableProviders from '../components/Providers/AllTablesProviders/TableProviders'
 import ModalNew from '../components/Providers/ModalNew'
-import TableProviders from '../components/Providers/TableProviders'
+
 
 const Providers = () => {
   return (

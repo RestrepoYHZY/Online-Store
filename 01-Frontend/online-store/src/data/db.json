@@ -1,100 +1,125 @@
 {
-    "providers": [
-      {
-        "id": 1,
-        "name": "Distrubidor A",
-        "nit": "9000000-1",
-        "address": "calle falsa 123",
-        "phone": "3135558888"
-      },
-      {
-        "id": 2,
-        "name": "Distrubidor B",
-        "nit": "9000000-2",
-        "address": "calle falsa 1234",
-        "phone": "3135558889"
-      },
-      {
-        "id": 3,
-        "name": "Distrubidor c",
-        "nit": "9000000-3",
-        "address": "calle falsa 12345",
-        "phone": "3135558810"
-      },
-      {
-        "name": "Distrubidor D",
-        "nit": "9000000-4",
-        "address": "calle falsa 123",
-        "phone": "3135558811",
-        "id": 4
-      },
-      {
-        "name": "Distrubidor D",
-        "nit": "9000000-4",
-        "address": "calle falsa 123",
-        "phone": "3135558811",
-        "id": 5
-      },
-      {
-        "id": 6
-      },
-      {
-        "name": "carlitos",
-        "nit": "90000-1",
-        "address": "Calle falsa 123",
-        "phone": "+58 3132222555",
-        "id": 7
-      },
-      {
-        "name": "pepito",
-        "nit": "90000-4",
-        "address": "l;askjdlkasdj",
-        "phone": "+59 31322222222",
-        "id": 8
-      }
-    ],
-    "customers": [
-      {
-        "id": 1,
-        "name": "Pepito Juan",
-        "lastName": "Lopez",
-        "document": "1033555888",
-        "phone": "+57 3135556666",
-        "email": "pepito.lopez@correo.com"
-      },
-      {
-        "id": 2,
-        "name": "Juanito",
-        "lastName": "Alcachofa",
-        "document": "1033555889",
-        "phone": "+57 3135556665",
-        "email": "Juanito.Alcachofa@correo.com"
-      },
-      {
-        "id": 3,
-        "name": "Peranito",
-        "lastName": "Lopez",
-        "document": "1033555810",
-        "phone": "+57 3135556668",
-        "email": "Peranito.Lopez@correo.com"
-      },
-      {
-        "name": "Lala",
-        "lastName": "Lulu",
-        "document": "1033555811",
-        "phone": "+57 3135556611",
-        "email": "Lala.Lulu@correo.com",
-        "id": 4
-      }
-    ],
-    "products": [
-      {
-        "id": 1,
-        "name": "Jalea de Manzana Organica",
-        "price": 10000,
-        "document": 2,
-        "phone": "2020/02/10",
-        "provider": "Dsitrivuidor A"
-      }
-    ]
-  }
+  "providers": [
+    {
+      "id": 1,
+      "provider": "Distrubidor A",
+      "nit": "9000000-1",
+      "address": "calle falsa 123",
+      "phoneNumber": "3135558888"
+    },
+    {
+      "id": 2,
+      "provider": "Distrubidor B",
+      "nit": "9000000-2",
+      "address": "calle falsa 1234",
+      "phoneNumber": "3135558889"
+    },
+    {
+      "id": 3,
+      "provider": "Distrubidor c",
+      "nit": "9000000-3",
+      "address": "calle falsa 12345",
+      "phoneNumber": "3135558810"
+    },
+    {
+      "provider": "Distrubidor D",
+      "nit": "9000000-4",
+      "address": "calle falsa 123",
+      "phoneNumber": "3135558811",
+      "id": 4
+    },
+    {
+      "provider": "Distrubidor D",
+      "nit": "9000000-4",
+      "address": "calle falsa 123",
+      "phoneNumber": "3135558811",
+      "id": 5
+    },
+    {
+      "provider": "carlitos",
+      "nit": "90000-1",
+      "address": "Calle falsa 123",
+      "phoneNumber": "+58 3132222555",
+      "id": 7
+    },
+    {
+      "provider": "pepito",
+      "nit": "90000-4",
+      "address": "l;askjdlkasdj",
+      "phoneNumber": "+59 31322222222",
+      "id": 8
+    },
+    {
+      "provider": "gf",
+      "nit": "343",
+      "address": "calle",
+      "phoneNumber": "+57 3197842892",
+      "id": 9
+    },
+    {
+      "provider": "Yhaizley",
+      "nit": "343",
+      "address": "calle",
+      "phoneNumber": "+57 3197842892",
+      "id": 12
+    },
+    {
+      "provider": "Yhaizley",
+      "nit": "r4444",
+      "address": "44",
+      "phoneNumber": "+43 3197842892",
+      "id": 13
+    },
+    {
+      "provider": "reer",
+      "nit": "343",
+      "address": "calle",
+      "phoneNumber": "+45 3197842892",
+      "id": 14
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Pepito Juan",
+      "lastName": "Lopez",
+      "document": "1033555888",
+      "phone": "+57 3135556666",
+      "email": "pepito.lopez@correo.com"
+    },
+    {
+      "id": 2,
+      "name": "Juanito",
+      "lastName": "Alcachofa",
+      "document": "1033555889",
+      "phone": "+57 3135556665",
+      "email": "Juanito.Alcachofa@correo.com"
+    },
+    {
+      "id": 3,
+      "name": "Peranito",
+      "lastName": "Lopez",
+      "document": "1033555810",
+      "phone": "+57 3135556668",
+      "email": "Peranito.Lopez@correo.com"
+    },
+    {
+      "name": "Lala",
+      "lastName": "Lulu",
+      "document": "1033555811",
+      "phone": "+57 3135556611",
+      "email": "Lala.Lulu@correo.com",
+      "id": 4
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Jalea de Manzana Organica",
+      "price": 10000,
+      "document": 2,
+      "phone": "2020/02/10",
+      "provider": "Dsitrivuidor A"
+    }
+  ]
+}

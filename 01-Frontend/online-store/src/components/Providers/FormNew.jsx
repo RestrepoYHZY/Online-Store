@@ -1,8 +1,8 @@
 import { Button, InputLabel } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
 import * as Yup from "yup";
+import { postProviders } from "../../actions/providers.action";
 
 const validationSchema = Yup.object().shape({
   provider: Yup.string().required("Sorry, this is required").trim(),
@@ -13,6 +13,17 @@ const validationSchema = Yup.object().shape({
 });
 
 const FormNew = () => {
+
+  const sendProviders = async (data)=>{
+    try{
+      const result = await postProviders(data);
+      console.log(result);
+    }catch(error){
+      console.log(error);
+    };
+  };
+
+
   return (
     <>
       <Formik
@@ -24,8 +35,16 @@ const FormNew = () => {
           phoneNumber: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
+
+        onSubmit={(values)=>{
+          const dataToSend = {
+            "provider":values.provider,
+            "nit":values.nit,
+            "address":values.address,
+            "phoneNumber":`+${values.indicative} ${values.phoneNumber}`
+          };
+          sendProviders(dataToSend);
+          console.log(dataToSend);
         }}
       >
         {() => (
