@@ -8,6 +8,7 @@ const instance= ()=> axios.create({
 });
 
 const http_service = {
-    get:(path)=>instance().get(path)
+    get:(path)=>instance().get(path),
+    post:(path,data)=>instance().post(path,data)
   };
 export default http_service;

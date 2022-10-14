@@ -7,6 +7,7 @@ import {
   TableHead,
   TableBody,
   IconButton,
+  Tooltip,
 } from "@mui/material";
 import React from "react";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
@@ -38,24 +39,29 @@ const TableCustomers = () => {
                 <TableCell align="center">+57 314 702 5444</TableCell>
                 <TableCell align="center">correo@correo.com</TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    size="medium"
-                    edge="start"
-                    color="primary"
-                    aria-label="menu"
-                    sx={{ mr: 1 }}
-                  >
-                    <IoCreateOutline />
-                  </IconButton>
-                  <IconButton
-                    size="medium"
-                    edge="start"
-                    color="primary"
-                    aria-label="menu"
-                    sx={{ mr: 1 }}
-                  >
-                    <IoTrashOutline />
-                  </IconButton>
+                  <Tooltip title="Edit">
+                    <IconButton
+                      size="medium"
+                      edge="start"
+                      color="primary"
+                      aria-label="menu"
+                      sx={{ mr: 1 }}
+                    >
+                      <IoCreateOutline />
+                    </IconButton>
+                  </Tooltip>
+
+                  <Tooltip title="Delete">
+                    <IconButton
+                      size="medium"
+                      edge="start"
+                      color="primary"
+                      aria-label="menu"
+                      sx={{ mr: 1 }}
+                    >
+                      <IoTrashOutline />
+                    </IconButton>
+                  </Tooltip>
                 </TableCell>
               </TableRow>
             </TableBody>
