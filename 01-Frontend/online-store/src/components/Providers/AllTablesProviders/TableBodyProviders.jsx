@@ -1,14 +1,18 @@
 import React from "react";
-import {
-  IconButton,
-  TableCell,
-  TableRow,
-  Tooltip,
-} from "@mui/material";
+import { IconButton, TableCell, TableRow, Tooltip } from "@mui/material";
 
-import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
+import { IoTrashOutline } from "react-icons/io5";
+import ModalProvider from "../ModalProvider";
 
-const TableBodyProviders = ({ id:idProvider, provider, nit, address, phoneNumber}) => {
+const TableBodyProviders = ({
+  id: idProvider,
+  provider,
+  nit,
+  address,
+  phoneNumber,
+}) => {
+
+
   return (
     <>
       <TableRow>
@@ -18,28 +22,17 @@ const TableBodyProviders = ({ id:idProvider, provider, nit, address, phoneNumber
         <TableCell align="center">{address}</TableCell>
         <TableCell align="center">{phoneNumber}</TableCell>
         <TableCell align="center">
-          <Tooltip title="Edit">
-          <IconButton
-            size="medium"
-            edge="start"
-            color="primary"
-            aria-label="menu"
-            sx={{ mr: 1 }}
-          >
-            <IoCreateOutline />
-          </IconButton>
-          </Tooltip>
-
+          <ModalProvider id={idProvider}/>
           <Tooltip title="Delete">
-          <IconButton
-            size="medium"
-            edge="start"
-            color="primary"
-            aria-label="menu"
-            sx={{ mr: 1 }}
-          >
-            <IoTrashOutline />
-          </IconButton>
+            <IconButton
+              size="medium"
+              edge="start"
+              color="primary"
+              aria-label="menu"
+              sx={{ mr: 1 }}
+            >
+              <IoTrashOutline />
+            </IconButton>
           </Tooltip>
         </TableCell>
       </TableRow>

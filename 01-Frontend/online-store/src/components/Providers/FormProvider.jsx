@@ -1,8 +1,11 @@
 import { Button, InputLabel } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { useEffect, useState } from "react";
+
 import * as Yup from "yup";
-import { postProviders } from "../../actions/providers.action";
+import { postProviders, putProviders, getProviderById } from "../../actions/providers.action";
+
 
 const validationSchema = Yup.object().shape({
   provider: Yup.string().required("Sorry, this is required").trim(),
@@ -12,39 +15,81 @@ const validationSchema = Yup.object().shape({
   phoneNumber: Yup.string().required("Sorry, this is required").trim(),
 });
 
-const FormNew = () => {
+const FormProvider = ({ id: idProvider }) => {
+  const [provider, setProvider] = useState({
+    id: idProvider,
+    provider: "",
+    nit: "",
+    indicative: "",
+    address: "",
+    phoneNumber: "",
+  });
 
-  const sendProviders = async (data)=>{
-    try{
+  const sendProviders = async (data) => {
+    try {
       const result = await postProviders(data);
       console.log(result);
-    }catch(error){
+    } catch (error) {
       console.log(error);
-    };
+    }
   };
 
+  const updateProviders = async (id, data) => {
+    try {
+      const result = await putProviders(id, data);
+      console.log(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
+  const getProvider = async (id) => {
+    try {
+      const { data } = await getProviderById(id);
+      const { id: idElement, ...dataToSend } = data;
+      setProvider(dataToSend);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (idProvider) {
+      getProvider(idProvider);
+      return;
+    }
+  }, []);
   return (
     <>
       <Formik
         initialValues={{
-          provider: "",
-          nit: "",
-          indicative: "",
-          address: "",
-          phoneNumber: "",
+          id: idProvider,
+          provider: provider.provider,
+          nit: provider.nit,
+          indicative: provider.indicative,
+          address: provider.address,
+          phoneNumber: provider.phoneNumber,
         }}
         validationSchema={validationSchema}
+        enableReinitialize
 
-        onSubmit={(values)=>{
-          const dataToSend = {
-            "provider":values.provider,
-            "nit":values.nit,
-            "address":values.address,
-            "phoneNumber":`+${values.indicative} ${values.phoneNumber}`
+        onSubmit={(values) => {
+          const {id, ...dataToSend} = values;
+
+          if(idProvider){
+            updateProviders(id,dataToSend);
+            return 
           };
-          sendProviders(dataToSend);
-          console.log(dataToSend);
+
+
+          const dataToSendP = {
+            provider: values.provider,
+            nit: values.nit,
+            address: values.address,
+            phoneNumber: `+${values.indicative} ${values.phoneNumber}`,
+          };
+          sendProviders(dataToSendP);
+          console.log(dataToSendP);
         }}
       >
         {() => (
@@ -78,7 +123,7 @@ const FormNew = () => {
               </Stack>
               <div align="right">
                 <Button type="submit" variant="contained" color="primary">
-                  Add Provider
+                  Send
                 </Button>
               </div>
             </Stack>
@@ -89,4 +134,4 @@ const FormNew = () => {
   );
 };
 
-export default FormNew;
+export default FormProvider;
