@@ -22,7 +22,7 @@ const ModalProvider = ({ id}) => {
       ) : (
         <Tooltip title="Edit">
           <IconButton
-            onClick={() => handleOpen()}
+            onClick={handleOpen}
             size="medium"
             edge="start"
             color="primary"

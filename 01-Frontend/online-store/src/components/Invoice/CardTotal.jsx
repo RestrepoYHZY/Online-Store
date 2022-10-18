@@ -6,11 +6,11 @@ const CardTotal = () => {
       <Stack direction="row" alignItems="center" justifyContent="space-around" padding={2}>
         <Box>
           <Typography fontWeight={700}>Date</Typography>
-          <p>12/10/2022</p>
+          <Typography>12/10/2022</Typography>
         </Box>
         <Box>
           <Typography fontWeight={700}>Customer:</Typography>
-          <p>Antonio Perez</p>
+          <Typography>Antonio Perez</Typography>
         </Box>
         <Box>
           <Typography fontWeight={700}>Total</Typography>
