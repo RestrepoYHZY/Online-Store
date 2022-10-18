@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 import * as Yup from "yup";
 import { postProviders, putProviders, getProviderById } from "../../actions/providers.action";
+import { useEntities } from "../../context/EntitiesContext";
 
 
 const validationSchema = Yup.object().shape({
@@ -25,10 +26,12 @@ const FormProvider = ({ id: idProvider }) => {
     phoneNumber: 0,
   });
 
+  const {getProvidersData}= useEntities();
   const sendProviders = async (data) => {
     try {
       const result = await postProviders(data);
       console.log(result);
+      getProvidersData();
     } catch (error) {
       console.log(error);
     }
@@ -38,6 +41,7 @@ const FormProvider = ({ id: idProvider }) => {
     try {
       const result = await putProviders(id, data);
       console.log(result);
+      getProvidersData();
     } catch (error) {
       console.log(error);
     }

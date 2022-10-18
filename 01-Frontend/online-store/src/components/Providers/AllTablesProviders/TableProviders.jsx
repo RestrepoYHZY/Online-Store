@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+
 import {
     Paper,
     Table,
@@ -10,27 +10,16 @@ import {
   } from "@mui/material";
 
 
-import { getProviders } from '../../../actions/providers.action';
 import TableBodyProviders from './TableBodyProviders';
+import { useEntities } from '../../../context/EntitiesContext';
 
 
 
   const TableProviders = () => {
 
-    const [providers, setProviders]= useState([]);
+   const { providers}= useEntities(); //llamado de entitesContext
 
-    const getProvidersData = async ()=>{
-      try{
-        const { data } = await getProviders();
-        setProviders(data);
-      }catch(error){
-        console.log(error);
-      };
-    };
-    useEffect(()=>{
-      getProvidersData();
-    }, []);
-
+   
   return (
     <>
     <Paper sx={{ width: "100%" }} elevation={0} style={{marginTop: '1em'}} >

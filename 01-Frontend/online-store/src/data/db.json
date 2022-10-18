@@ -4,7 +4,7 @@
       "provider": "Distrubidor B",
       "nit": "9000000-2",
       "address": "calle falsa ",
-      "phoneNumber": "+3 1",
+      "phoneNumber": "+3 15555",
       "id": 2
     },
     {
@@ -99,6 +99,13 @@
       "address": "calle",
       "phoneNumber": "+60 3197842892",
       "id": 20
+    },
+    {
+      "provider": "Distrubidor Y",
+      "nit": "434434",
+      "address": "calle",
+      "phoneNumber": "+54 3197842892",
+      "id": 21
     }
   ],
   "customers": [
