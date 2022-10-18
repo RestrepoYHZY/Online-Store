@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 
-const TableInvoce = () => {
+const TableInvoice = () => {
   return (
     <>
       <Paper sx={{ width: "98%" }} elevation={0} style={{ margin: "1%" }}>
@@ -67,4 +67,4 @@ const TableInvoce = () => {
   );
 };
 
-export default TableInvoce;
+export default TableInvoice;
