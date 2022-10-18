@@ -51,12 +51,19 @@ const FormProvider = ({ id: idProvider }) => {
     try {
       const { data } = await getProviderById(id);
       const { id: idElement, phoneNumber, ...dataSend } = data;
-      const destructuredPhone = phoneNumber.split(" ");
+
+      const destructuredPhone = ()=>{
+        if(phoneNumber.includes("+")){
+          return phoneNumber.split(" ");
+        };
+
+        return phoneNumber;
+      };
 
       const dataToSend ={
         ...dataSend,
-        indicative:+destructuredPhone[0].replace("+",""),
-        phoneNumber: +destructuredPhone[1]
+        indicative:phoneNumber.includes("+") ? +destructuredPhone()[0].replace("+",""):0,
+        phoneNumber:phoneNumber.includes("+")? +destructuredPhone()[1]:destructuredPhone()
       }
       setProvider(dataToSend);
       
