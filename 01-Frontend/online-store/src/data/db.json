@@ -65,13 +65,6 @@
       "id": 13
     },
     {
-      "provider": "reer",
-      "nit": "343",
-      "address": "calle",
-      "phoneNumber": "+45 3197842892",
-      "id": 14
-    },
-    {
       "provider": "Yhaizley",
       "nit": "434434",
       "indicative": 57,
@@ -88,9 +81,6 @@
       "id": 16
     },
     {
-      "id": 17
-    },
-    {
       "provider": "Yhaizley",
       "nit": "434434",
       "address": "calle",
@@ -101,15 +91,14 @@
       "provider": "Gaby",
       "nit": "434434",
       "address": "calle",
-      "phoneNumber": "+44 3197842892",
+      "phoneNumber": "+40 3197842892",
       "id": 19
     },
     {
       "provider": "Yhaizley Restrepo",
       "nit": "434434",
-      "indicative": 55,
-      "address": "calle24",
-      "phoneNumber": "+66 3197842892",
+      "address": "calle",
+      "phoneNumber": "+60 3197842892",
       "id": 20
     }
   ],

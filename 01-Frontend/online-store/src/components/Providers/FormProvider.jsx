@@ -17,12 +17,12 @@ const validationSchema = Yup.object().shape({
 
 const FormProvider = ({ id: idProvider }) => {
   const [provider, setProvider] = useState({
-    id: idProvider,
+    id: 0,
     provider: "",
     nit: "",
-    indicative: "",
+    indicative: 0,
     address: "",
-    phoneNumber: "",
+    phoneNumber: 0,
   });
 
   const sendProviders = async (data) => {
@@ -46,8 +46,16 @@ const FormProvider = ({ id: idProvider }) => {
   const getProvider = async (id) => {
     try {
       const { data } = await getProviderById(id);
-      const { id: idElement, ...dataToSend } = data;
+      const { id: idElement, phoneNumber, ...dataSend } = data;
+      const destructuredPhone = phoneNumber.split(" ");
+
+      const dataToSend ={
+        ...dataSend,
+        indicative:+destructuredPhone[0].replace("+",""),
+        phoneNumber: +destructuredPhone[1]
+      }
       setProvider(dataToSend);
+      
     } catch (error) {
       console.log(error);
     }
@@ -74,13 +82,17 @@ const FormProvider = ({ id: idProvider }) => {
         enableReinitialize
 
         onSubmit={(values) => {
-          const {id, ...dataToSend} = values;
+          const {id, indicative, phoneNumber, ...dataSend} = values;
 
           if(idProvider){
-            updateProviders(id,dataToSend);
+            const dataToSend = {
+              ...dataSend,
+              phoneNumber:`+${ indicative } ${ phoneNumber }`
+            };
+  
+            updateProviders(id, dataToSend);
             return 
           };
-
 
           const dataToSendP = {
             provider: values.provider,
@@ -118,7 +130,7 @@ const FormProvider = ({ id: idProvider }) => {
               </Stack>
               <Stack>
                 <InputLabel htmlFor="phoneNumber">Phone Number </InputLabel>
-                <Field type="string" name="phoneNumber" />
+                <Field type="number" name="phoneNumber" />
                 <ErrorMessage name="phoneNumber" />
               </Stack>
               <div align="right">
