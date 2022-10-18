@@ -16,6 +16,7 @@ const App = () => {
     <Box style={{marginTop:'4em'}}>
       <Routes>
         {/* <Route path="/" element={ <NewInvoce /> } </Route> */}
+        <Route path="/" element={ <NewInvoce /> } />
         <Route path="/NewInvoce" element={ <NewInvoce /> } />
           <Route path="/ListInvoce" element={ <ListInvoce /> } />
           <Route path="/Products" element={ <Products /> } />

@@ -9,6 +9,7 @@ import {
   TableBody,
   Button,
   Box,
+  Tooltip,
 } from "@mui/material";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 
@@ -34,24 +35,28 @@ const TableInvoice = () => {
                 <TableCell align="center">2</TableCell>
                 <TableCell align="center">20.000</TableCell>
                 <TableCell align="center">
-                  <IconButton
-                    size="medium"
-                    edge="start"
-                    color="primary"
-                    aria-label="menu"
-                    sx={{ mr: 1 }}
-                  >
-                    <IoCreateOutline />
-                  </IconButton>
-                  <IconButton
-                    size="medium"
-                    edge="start"
-                    color="primary"
-                    aria-label="menu"
-                    sx={{ mr: 1 }}
-                  >
-                    <IoTrashOutline />
-                  </IconButton>
+                  <Tooltip title="Edit">
+                    <IconButton
+                      size="medium"
+                      edge="start"
+                      color="primary"
+                      aria-label="menu"
+                      sx={{ mr: 1 }}
+                    >
+                      <IoCreateOutline />
+                    </IconButton>
+                  </Tooltip>
+                  <Tooltip title="Delete">
+                    <IconButton
+                      size="medium"
+                      edge="start"
+                      color="primary"
+                      aria-label="menu"
+                      sx={{ mr: 1 }}
+                    >
+                      <IoTrashOutline />
+                    </IconButton>
+                  </Tooltip>
                 </TableCell>
               </TableRow>
             </TableBody>
@@ -60,7 +65,7 @@ const TableInvoice = () => {
       </Paper>
       <Box align="right">
         <Button type="submit" variant="contained">
-         Save 
+          Save
         </Button>
       </Box>
     </>

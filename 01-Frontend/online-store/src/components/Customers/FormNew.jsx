@@ -15,6 +15,9 @@ const FormProvider = () => {
      document: Yup.string()
      .required("Sorry, this is required")
      .trim(),
+     indicative: Yup.string()
+     .required("Sorry, this is required")
+     .trim(),
      phoneNumber: Yup.string()
      .required("Sorry, this is required")
      .trim(),
@@ -58,8 +61,13 @@ const FormProvider = () => {
                   <ErrorMessage name="document"/>  
                 </Stack>
                 <Stack>
+                  <InputLabel htmlFor="indicative">Indicative</InputLabel>
+                  <Field type="number" name="indicative" />
+                  <ErrorMessage name="indicative"/>  
+                </Stack>
+                <Stack>
                   <InputLabel htmlFor="phoneNumber">Phone Number</InputLabel>
-                  <Field type="text" name="phoneNumber" />
+                  <Field type="number" name="phoneNumber" />
                   <ErrorMessage name="phoneNumber"/>  
                 </Stack>
                 <Stack>
