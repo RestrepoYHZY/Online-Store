@@ -25,7 +25,7 @@ const validationSchema = Yup.object().shape({
 
 });
 
-const FormNew = () => {
+const FormProvider = () => {
   return (
     <>
       <Formik
@@ -94,4 +94,4 @@ const FormNew = () => {
   );
 };
 
-export default FormNew;
+export default FormProvider;

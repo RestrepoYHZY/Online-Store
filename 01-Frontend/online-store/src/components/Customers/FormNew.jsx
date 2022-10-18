@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Button, InputLabel, Stack } from "@mui/material";
 import * as Yup from "yup";
 
-const FormNew = () => {
+const FormProvider = () => {
 
   const validationSchema = Yup.object().shape({
     name: Yup.string()
@@ -80,4 +80,4 @@ const FormNew = () => {
   );
 };
 
-export default FormNew;
+export default FormProvider;
