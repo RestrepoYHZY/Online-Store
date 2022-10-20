@@ -4,8 +4,7 @@ import React, { Fragment, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 import QuestionMsg from "./QuestionMsg";
 import Result from "./Result";
-import { deleteProviders } from "../../actions/providers.action";
-import { useEntities } from "../../context/EntitiesContext";
+
 
 const Delete = ({ id, name, entity, getData, deleteAction }) => {
   const [open, setOpen] = useState(false);

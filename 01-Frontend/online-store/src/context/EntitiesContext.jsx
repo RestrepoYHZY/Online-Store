@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { getProducts } from "../actions/products.action";
 import { getProviders } from "../actions/providers.action";
 
 const EntitiesContext = createContext();
@@ -8,6 +9,7 @@ const useEntities = () => {
   if (context) return context;
 };
 const EntitiesProvider = ({ children }) => {
+
   // PROVIDERS
   const [providers, setProviders] = useState([]);
 
@@ -19,9 +21,28 @@ const EntitiesProvider = ({ children }) => {
       console.log(error);
     }
   };
+
+ //Products
+
+ const [products, setProducts]= useState ([]);
+
+ const getProductsData = async()=>{
+   try{
+     const {data}= await getProducts();
+     setProducts(data);
+   }catch (error) {
+     console.log(error);
+   }
+ };
+
   useEffect(() => {
     getProvidersData();
+    getProductsData();
   }, []);
+
+
+   
+
 
   return (
     <>
@@ -29,12 +50,20 @@ const EntitiesProvider = ({ children }) => {
         value={{
           providers,
           getProvidersData,
+          products,
+          getProductsData
+
         }}
       >
         {children}
       </EntitiesContext.Provider>
     </>
   );
+
+
+
+
+
 };
 
 export { EntitiesProvider, useEntities };

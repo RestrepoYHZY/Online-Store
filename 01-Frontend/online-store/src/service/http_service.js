@@ -14,7 +14,6 @@ const http_service = {
     put:(path,data)=>instance().put(path,data),
     delete:(path)=>instance().delete(path)
 
-
   };
 
 
