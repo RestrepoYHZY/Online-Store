@@ -1,13 +1,14 @@
 import { Button, Grid, InputLabel } from "@mui/material";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
+import { v4 as uuidV4 } from "uuid";
 
 const validationSchema = Yup.object().shape({
   date: Yup.string().required("Sorry, this is required").trim(),
   customer: Yup.string().required("Sorry, this is required ").trim(),
   product: Yup.string().required("Sorry, this is required").trim(),
 });
-const FormInvoice = () => {
+const FormInvoice = ({ carrito, setCarrito, setDate, setCustomer }) => {
   return (
     <>
       <Formik
@@ -20,8 +21,18 @@ const FormInvoice = () => {
           subtotal: ""
         }}
         validationSchema={validationSchema}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values)=>{
+          const { date, customer, ...otherData } = values;
+  
+          setDate(date);
+          setCustomer(customer);
+  
+          const dataToSend = {
+            id:uuidV4(),
+            ...otherData
+          };
+  
+          setCarrito([...carrito, dataToSend]);
         }}
       >
         {() => (
