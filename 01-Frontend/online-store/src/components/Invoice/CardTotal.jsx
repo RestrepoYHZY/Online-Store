@@ -1,22 +1,40 @@
-import { Box, Paper, Stack, Typography } from "@mui/material"
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from "@mui/material";
 
-const CardTotal = () => {
+
+const CardTotal = ({ date, customer, total }) => {
   return (<>
-    <Paper >
-      <Stack direction="row" alignItems="center" justifyContent="space-around" padding={2}>
-        <Box>
-          <Typography fontWeight={700}>Date</Typography>
-          <Typography>12/10/2022</Typography>
-        </Box>
-        <Box>
-          <Typography fontWeight={700}>Customer:</Typography>
-          <Typography>Antonio Perez</Typography>
-        </Box>
-        <Box>
-          <Typography fontWeight={700}>Total</Typography>
-          <Typography fontWeight={700}>$20.000</Typography>
-        </Box>
-      </Stack>
+     <Paper style={{ width:"91%" }}>
+      <TableContainer component={ Paper }>
+        <Table>
+          <TableHead>
+            <TableRow>
+            <TableCell>
+                  <Typography variant="h7" fontWeight={700}>
+                    Date:
+                  </Typography>
+                </TableCell>
+             
+                <TableCell>
+                  <Typography variant="h7" fontWeight={700}>
+                   Customer:
+                  </Typography>
+                </TableCell>
+                <TableCell>
+                  <Typography variant="h7" fontWeight={700}>
+                    Total:
+                  </Typography>
+                </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell><Typography>{ date }</Typography></TableCell>
+              <TableCell><Typography>{ customer }</Typography></TableCell>
+              <TableCell> <Typography>{ total }</Typography></TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Paper>
   </>)
 }

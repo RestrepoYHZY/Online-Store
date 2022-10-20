@@ -12,6 +12,7 @@ import {
 import React from "react";
 import { IoTrashOutline, IoCreateOutline } from "react-icons/io5";
 
+
 const TableCustomers = () => {
   return (
     <>
@@ -59,7 +60,9 @@ const TableCustomers = () => {
                       aria-label="menu"
                       sx={{ mr: 1 }}
                     >
+                      
                       <IoTrashOutline />
+                   
                     </IconButton>
                   </Tooltip>
                 </TableCell>
