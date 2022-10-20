@@ -1,4 +1,3 @@
-
 import {
   Paper,
   Table,
@@ -9,19 +8,11 @@ import {
   TableRow,
 } from "@mui/material";
 
-
 import TableBodyProducts from "./TableBodyProducts";
-import { useEntities } from '../../../context/EntitiesContext';
-
-
+import { useEntities } from "../../../context/EntitiesContext";
 
 const TableProducts = () => {
-
-  const { products }= useEntities(); //llamado de entites Context
-
- 
-
-
+  const { products } = useEntities(); //llamado de entites Context
 
   return (
     <>
@@ -38,22 +29,20 @@ const TableProducts = () => {
                 <TableCell align="center">Provider</TableCell>
                 <TableCell align="center">Actions</TableCell>
               </TableRow>
-            </TableHead>  
+            </TableHead>
 
             <TableBody>
-
-            {products.map(item=>(
-              <TableBodyProducts
-              key={item.id}
-              id={item.id}
-              nameProduct={item.nameProduct}
-              price={item.price}
-              amount={item.amount}
-              expirationDate={item.expirationDate}
-              provider={item.provider}
-              />
-            ))}
-              
+              {products.map((item) => (
+                <TableBodyProducts
+                  key={item.id}
+                  id={item.id}
+                  nameProduct={item.nameProduct}
+                  price={item.price}
+                  amount={item.amount}
+                  expirationDate={item.expirationDate}
+                  provider={item.provider}
+                />
+              ))}
             </TableBody>
           </Table>
         </TableContainer>

@@ -3,13 +3,16 @@ import { IconButton, TableCell, TableRow, Tooltip } from "@mui/material";
 
 import { IoCreateOutline, IoTrashOutline } from "react-icons/io5";
 import { getProviderById } from "../../../actions/providers.action";
+import Delete from "../../Delete/Delete";
+import { useEntities } from "../../../context/EntitiesContext";
+import { deleteProducts } from "../../../actions/products.action";
 
 const TableBodyProducts = ({
   id:idProduct, nameProduct, price, amount, expirationDate, provider:idProvider
 }) => {
 
   const [provider, setProvider]= useState("");
-  
+  const {getProductsData} =useEntities();
 
   const getProviderInfo = async ()=>{
     try{
@@ -47,17 +50,12 @@ const TableBodyProducts = ({
             </IconButton>
           </Tooltip>
 
-          <Tooltip title="Delete">
-            <IconButton
-              size="medium"
-              edge="start"
-              color="primary"
-              aria-label="menu"
-              sx={{ mr: 1 }}
-            >
-              <IoTrashOutline />
-            </IconButton>
-          </Tooltip>
+          <Delete
+           id={idProduct}
+            name={nameProduct} 
+            entity="product"
+            getData= {getProductsData}
+            deleteAction={ deleteProducts } />
         </TableCell>
       </TableRow>
     </>

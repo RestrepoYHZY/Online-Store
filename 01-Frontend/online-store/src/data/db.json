@@ -65,14 +65,6 @@
   ],
   "products": [
     {
-      "id": 1,
-      "nameProduct": "Jalea de Manzana Organica",
-      "price": 10000,
-      "amount": 2,
-      "expirationDate": "2020/02/10",
-      "provider": "12"
-    },
-    {
       "id": 2,
       "nameProduct": "Jalea de limon Organica",
       "price": 10000,
