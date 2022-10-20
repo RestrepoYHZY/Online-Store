@@ -11,7 +11,9 @@ const instance= ()=> axios.create({
 const http_service = {
     get:(path)=>instance().get(path),
     post:(path,data)=>instance().post(path,data),
-    put:(path,data)=>instance().put(path,data)
+    put:(path,data)=>instance().put(path,data),
+    delete:(path)=>instance().delete(path)
+
 
   };
 

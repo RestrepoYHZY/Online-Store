@@ -1,48 +1,6 @@
 {
   "providers": [
     {
-      "provider": "Distrubidor i",
-      "nit": "9000000-2",
-      "address": "calle falsa ",
-      "phoneNumber": "+3 15555",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "provider": "Distrubidor c",
-      "nit": "9000000-3",
-      "address": "calle falsa 12345",
-      "phoneNumber": "3135558810"
-    },
-    {
-      "provider": "Distrubidor D",
-      "nit": "9000000-4",
-      "address": "calle falsa 123",
-      "phoneNumber": "3135558811",
-      "id": 4
-    },
-    {
-      "provider": "Distrubidor D",
-      "nit": "9000000-4",
-      "address": "calle falsa 123",
-      "phoneNumber": "3135558811",
-      "id": 5
-    },
-    {
-      "provider": "carlitos",
-      "nit": "90000-1",
-      "address": "Calle falsa 123",
-      "phoneNumber": "+58 3132222555",
-      "id": 7
-    },
-    {
-      "provider": "pepito",
-      "nit": "90000-4",
-      "address": "l;askjdlkasdj",
-      "phoneNumber": "+59 31322222222",
-      "id": 8
-    },
-    {
       "provider": "gf",
       "nit": "343",
       "address": "calle",
@@ -55,29 +13,6 @@
       "address": "calle",
       "phoneNumber": "+57 3197842892",
       "id": 12
-    },
-    {
-      "provider": "Yhaizley",
-      "nit": "r4444",
-      "address": "44",
-      "phoneNumber": "+43 3197842892",
-      "id": 13
-    },
-    {
-      "provider": "Yhaizley",
-      "nit": "434434",
-      "indicative": 57,
-      "address": "calle",
-      "phoneNumber": "3197842892",
-      "id": 15
-    },
-    {
-      "provider": "Yhaizley",
-      "nit": "343",
-      "indicative": 57,
-      "address": "calle",
-      "phoneNumber": "3197842892",
-      "id": 16
     },
     {
       "provider": "Yhaizley",
