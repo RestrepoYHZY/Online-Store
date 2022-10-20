@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { styleModal } from "../../styles/theme";
 import FormProvider from "./FormProvider";
 import { IoCreateOutline } from "react-icons/io5";
+import { useEntities } from "../../context/EntitiesContext";
 
 const ModalProvider = ({ id}) => {
   const [open, setOpen] = useState(false);
+
+  const {getProvidersData}= useEntities();
+
   const handleOpen = () => {
     setOpen((e) => !e);
+    getProvidersData();//Aca llamo de entities
   };
 
   return (

@@ -1,17 +1,20 @@
 import React from "react";
-import { IconButton, TableCell, TableRow, Tooltip } from "@mui/material";
+import {  TableCell, TableRow } from "@mui/material";
 
-import { IoTrashOutline } from "react-icons/io5";
 import ModalProvider from "../ModalProvider";
+import Delete from "../../Delete/Delete";
+import { useEntities } from "../../../context/EntitiesContext";
+import { deleteProviders } from "../../../actions/providers.action";
 
 const TableBodyProviders = ({
+
   id: idProvider,
   provider,
   nit,
   address,
   phoneNumber,
 }) => {
-
+  const { getProvidersData } = useEntities();
 
   return (
     <>
@@ -22,18 +25,13 @@ const TableBodyProviders = ({
         <TableCell align="center">{address}</TableCell>
         <TableCell align="center">{phoneNumber}</TableCell>
         <TableCell align="center">
-          <ModalProvider id={idProvider}/>
-          <Tooltip title="Delete">
-            <IconButton
-              size="medium"
-              edge="start"
-              color="primary"
-              aria-label="menu"
-              sx={{ mr: 1 }}
-            >
-              <IoTrashOutline />
-            </IconButton>
-          </Tooltip>
+          <ModalProvider id={idProvider} />
+          <Delete
+           id={idProvider}
+            name={provider} 
+            entity="provider"
+            getData= {getProvidersData}
+            deleteAction={ deleteProviders } />
         </TableCell>
       </TableRow>
     </>
