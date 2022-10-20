@@ -1,25 +1,11 @@
 {
   "providers": [
     {
-      "provider": "gf",
-      "nit": "343",
-      "address": "calle",
-      "phoneNumber": "+57 3197842892",
-      "id": 9
-    },
-    {
       "provider": "Yhaizley",
       "nit": "343",
       "address": "calle",
       "phoneNumber": "+57 3197842892",
       "id": 12
-    },
-    {
-      "provider": "Yhaizley",
-      "nit": "434434",
-      "address": "calle",
-      "phoneNumber": "+33 3197842892",
-      "id": 18
     },
     {
       "provider": "Gaby",
@@ -29,18 +15,18 @@
       "id": 19
     },
     {
-      "provider": "Yhaizley Restrepo",
-      "nit": "434434",
-      "address": "calle",
-      "phoneNumber": "+60 3197842892",
-      "id": 20
-    },
-    {
       "provider": "Distrubidor Y",
       "nit": "434434",
       "address": "calle",
       "phoneNumber": "+54 3197842892",
       "id": 21
+    },
+    {
+      "provider": "Distrubidor B",
+      "nit": "9000000-2",
+      "address": "calle Falsa 242",
+      "phoneNumber": "+55 3197842892",
+      "id": 22
     }
   ],
   "customers": [
@@ -80,11 +66,35 @@
   "products": [
     {
       "id": 1,
-      "name": "Jalea de Manzana Organica",
+      "nameProduct": "Jalea de Manzana Organica",
       "price": 10000,
-      "document": 2,
-      "phone": "2020/02/10",
-      "provider": "Dsitrivuidor A"
+      "amount": 2,
+      "expirationDate": "2020/02/10",
+      "provider": "12"
+    },
+    {
+      "id": 2,
+      "nameProduct": "Jalea de limon Organica",
+      "price": 10000,
+      "amount": 2,
+      "expirationDate": "2020/02/10",
+      "provider": "19"
+    },
+    {
+      "id": 3,
+      "nameProduct": "Jalea de Cereza Organica",
+      "price": 10000,
+      "amount": 2,
+      "expirationDate": "2020/02/10",
+      "provider": "21"
+    },
+    {
+      "id": 4,
+      "nameProduct": "Jalea de Uva Organica",
+      "price": 10000,
+      "amount": 2,
+      "expirationDate": "2020/02/10",
+      "provider": "22"
     }
   ]
 }

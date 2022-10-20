@@ -2,9 +2,9 @@ import { Button, Modal, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { styleModal } from "../../styles/theme";
-import FormNew from "./FormNew";
+import FormProduct from "./FormProduct";
 
-const ModalNew = () => {
+const ModalProduct = () => {
   const [modal, setModal] = useState(false);
 
   const openCloseModal = () => {
@@ -28,11 +28,11 @@ const ModalNew = () => {
            
              <Typography variant= "h6" align='center'>New Product</Typography>
            
-          <FormNew />
+          <FormProduct />
         </Box>
       </Modal>
     </>
   );
 };
 
-export default ModalNew;
+export default ModalProduct;
