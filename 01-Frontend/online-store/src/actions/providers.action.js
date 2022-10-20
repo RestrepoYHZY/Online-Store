@@ -14,4 +14,7 @@ export const getProviders = async ()=>
   export const putProviders = async (id, data)=>
   await http_service.put(`${path}/${id}`, data);
 
+  export const deleteProviders= async (id)=>
+  await http_service.delete(`${ path }/${ id }`);
+
   
