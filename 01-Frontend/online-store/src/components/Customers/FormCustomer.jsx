@@ -2,9 +2,6 @@ import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { Button, InputLabel, Stack } from "@mui/material";
 import * as Yup from "yup";
-
-const FormProvider = () => {
-
   const validationSchema = Yup.object().shape({
     name: Yup.string()
      .required("Sorry, this is required")
@@ -26,6 +23,9 @@ const FormProvider = () => {
      .email("This email is not valid")
      .trim()
   });
+const FormCustomer = () => {
+
+
   return (
     <>
       <Formik
@@ -88,4 +88,4 @@ const FormProvider = () => {
   );
 };
 
-export default FormProvider;
+export default FormCustomer;

@@ -1,7 +1,7 @@
 import { Box, Modal, Typography, Button } from "@mui/material";
 import React, { useState } from "react";
 import { styleModal } from "../../styles/theme";
-import FormNew from "../Customers/FormNew";
+import FormNew from "./FormCustomer";
 
 const ModalNew = () => {
   const [modal, setModal] = useState(false);

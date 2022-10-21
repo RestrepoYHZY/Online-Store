@@ -41,6 +41,23 @@ const EntitiesProvider = ({ children }) => {
     getProductsData();
   }, []);
 
+  //Customer
+  const [customer, setCustomer]= useState ([]);
+
+ const getCustomerData = async()=>{
+   try{
+     const {data}= await getCustomer();
+     setCustomer(data);
+     console.log(data)
+   }catch (error) {
+     console.log(error);
+   }
+ };
+
+  useEffect(() => {
+   getCustomerData();
+  }, []);
+
 
   return (
     <>
@@ -50,6 +67,8 @@ const EntitiesProvider = ({ children }) => {
           getProvidersData,
           products,
           getProductsData,
+          customer,
+          getCustomerData
 
         }}
       >
