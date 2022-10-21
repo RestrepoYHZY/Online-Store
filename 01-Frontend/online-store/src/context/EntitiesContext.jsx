@@ -30,6 +30,7 @@ const EntitiesProvider = ({ children }) => {
    try{
      const {data}= await getProducts();
      setProducts(data);
+     console.log(data)
    }catch (error) {
      console.log(error);
    }
@@ -41,9 +42,6 @@ const EntitiesProvider = ({ children }) => {
   }, []);
 
 
-   
-
-
   return (
     <>
       <EntitiesContext.Provider
@@ -51,7 +49,7 @@ const EntitiesProvider = ({ children }) => {
           providers,
           getProvidersData,
           products,
-          getProductsData
+          getProductsData,
 
         }}
       >

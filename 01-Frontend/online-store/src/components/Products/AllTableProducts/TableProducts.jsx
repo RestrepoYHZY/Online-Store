@@ -25,7 +25,7 @@ const TableProducts = () => {
                 <TableCell align="center">Product</TableCell>
                 <TableCell align="center">Price</TableCell>
                 <TableCell align="center">Amount</TableCell>
-                <TableCell align="center">Date of Expiry</TableCell>
+                <TableCell align="center">Expiration Date</TableCell>
                 <TableCell align="center">Provider</TableCell>
                 <TableCell align="center">Actions</TableCell>
               </TableRow>

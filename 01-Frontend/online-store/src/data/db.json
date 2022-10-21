@@ -65,28 +65,44 @@
   ],
   "products": [
     {
-      "id": 2,
-      "nameProduct": "Jalea de limon Organica",
-      "price": 10000,
-      "amount": 2,
-      "expirationDate": "2020/02/10",
-      "provider": "19"
+      "nameProduct": "Jalea de naranja Organica",
+      "price": 2000,
+      "amount": 5,
+      "expirationDate": "2022-10-28",
+      "provider": "12",
+      "id": 2
     },
     {
-      "id": 3,
       "nameProduct": "Jalea de Cereza Organica",
       "price": 10000,
       "amount": 2,
-      "expirationDate": "2020/02/10",
-      "provider": "21"
+      "expirationDate": "2022-10-13",
+      "provider": "19",
+      "id": 3
     },
     {
-      "id": 4,
       "nameProduct": "Jalea de Uva Organica",
       "price": 10000,
       "amount": 2,
-      "expirationDate": "2020/02/10",
-      "provider": "22"
+      "expirationDate": "2022-10-23",
+      "provider": "21",
+      "id": 4
+    },
+    {
+      "nameProduct": "Jalea de pera organica",
+      "price": 3,
+      "amount": 4,
+      "expirationDate": "2022-10-20",
+      "provider": "22",
+      "id": 6
+    },
+    {
+      "nameProduct": "Jalea de kiwi Organica",
+      "price": 2000,
+      "amount": 4,
+      "expirationDate": "2022-10-13",
+      "provider": "12",
+      "id": 7
     }
   ]
 }
