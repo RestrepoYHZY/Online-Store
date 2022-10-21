@@ -65,10 +65,10 @@
   ],
   "products": [
     {
-      "nameProduct": "Jalea de naranja Organica",
+      "nameProduct": "Jalea de pera",
       "price": 2000,
       "amount": 5,
-      "expirationDate": "2022-10-28",
+      "expirationDate": "2022-10-29",
       "provider": "12",
       "id": 2
     },
