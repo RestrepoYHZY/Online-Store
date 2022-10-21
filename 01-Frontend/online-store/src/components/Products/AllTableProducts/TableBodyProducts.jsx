@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { IconButton, TableCell, TableRow, Tooltip } from "@mui/material";
+import {  TableCell, TableRow } from "@mui/material";
 
-import { IoCreateOutline, IoTrashOutline } from "react-icons/io5";
 import { getProviderById } from "../../../actions/providers.action";
 import Delete from "../../Delete/Delete";
 import { useEntities } from "../../../context/EntitiesContext";
 import { deleteProducts } from "../../../actions/products.action";
+import ModalProduct from "../ModalProduct";
 
 const TableBodyProducts = ({
   id:idProduct, nameProduct, price, amount, expirationDate, provider:idProvider
@@ -19,7 +19,6 @@ const TableBodyProducts = ({
       const { data }= await getProviderById(idProvider);
       const { provider:name } = data;
       setProvider(name)
-      console.log(data)
     }catch(error){
       console.log(error);
     }
@@ -38,17 +37,7 @@ const TableBodyProducts = ({
         <TableCell align="center">{expirationDate}</TableCell>
         <TableCell align="center">{provider} </TableCell>
         <TableCell align="center">
-          <Tooltip title="Edit">
-            <IconButton
-              size="medium"
-              edge="start"
-              color="primary"
-              aria-label="menu"
-              sx={{ mr: 1 }}
-            >
-              <IoCreateOutline />
-            </IconButton>
-          </Tooltip>
+        <ModalProduct id={idProduct} />
 
           <Delete
            id={idProduct}

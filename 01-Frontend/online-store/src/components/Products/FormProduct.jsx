@@ -1,42 +1,104 @@
 import { Button, InputLabel } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
+import { getProductById, postProducts, putProducts } from "../../actions/products.action";
 import { useEntities } from "../../context/EntitiesContext";
 
 const validationSchema = Yup.object().shape({
-  name: Yup.string().required("Sorry, this is required").trim(),
+  nameProduct: Yup.string().required("Sorry, this is required").trim(),
   price: Yup.string().required("Sorry, this is required").trim(),
   amount: Yup.string().required("Sorry, this is required").trim(),
   provider: Yup.string().required("Sorry, this is required").trim(),
 });
 
-const FormProduct = () => {
-  const { providers } = useEntities();
+const FormProduct = ({id:idProduct}) => {
+  const { providers, getProductsData } = useEntities();
+
+  const [products, setProduct]=useState({
+    id:0,
+    nameProduct: "",
+    price: "",
+    amount: "",
+    expirationDate: "",
+    provider: ""
+  });
+
+
+  const sendProducts = async (data) => {
+    try {
+      const result = await postProducts(data);
+       console.log(result);
+      getProductsData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+
+  const updateProducts = async (id, data) => {
+    try {
+      const result = await putProducts(id, data);
+       console.log(result);
+      getProductsData();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getProduct = async (id)=>{
+    try{
+      const { data } = await getProductById(id)
+      const { id:idElement, ...dataToSend} = data
+      setProduct(dataToSend)
+    }catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    if(idProduct){
+      getProduct(idProduct);
+      return
+    }
+    
+  }, []);
 
   return (
     <>
       <Formik
         initialValues={{
-          name: "",
-          price: "",
-          amount: "",
-          date: "",
-          provider: "",
+          id:idProduct,
+          nameProduct: products.nameProduct,
+          price: products.price,
+          amount: products.amount,
+          expirationDate:products.expirationDate,
+          provider: products.provider,
         }}
+        enableReinitialize
         validationSchema={validationSchema}
+
         onSubmit={(values) => {
-          console.log(values);
+          const {id, ...dataToSend}=values;
+
+          if(idProduct){
+            updateProducts(id,dataToSend);
+            return
+          }
+          
+          sendProducts(values);
+          
         }}
       >
         {() => (
           <Form>
             <Stack spacing={2}>
               <Stack>
-                <InputLabel htmlFor="name">Name Product</InputLabel>
-                <Field type="text" name="name" />
-                <ErrorMessage name="name" render={(msg) => <p>{msg}</p>} />
+                <InputLabel htmlFor="nameProduct">Name Product</InputLabel>
+                <Field type="text" name="nameProduct" />
+                <ErrorMessage name="nameProduct" render={(msg) => <p>{msg}</p>} />
               </Stack>
 
               <Stack>
@@ -50,8 +112,8 @@ const FormProduct = () => {
                 <ErrorMessage name="amount" />
               </Stack>
               <Stack>
-                <InputLabel htmlFor="date">Date of Expiry</InputLabel>
-                <Field type="date" name="date" />
+                <InputLabel htmlFor="expirationDate">Expiration Date</InputLabel>
+                <Field type="date" name="expirationDate" />
               </Stack>
               <Stack>
                 <InputLabel htmlFor="provider">Providers</InputLabel>
@@ -67,7 +129,7 @@ const FormProduct = () => {
               </Stack>
               <div align="right">
                 <Button type="submit" variant="contained" color="primary">
-                  Add Product
+                  Send
                 </Button>
               </div>
             </Stack>
