@@ -35,7 +35,7 @@
       "name": "Pepito Juan",
       "lastName": "Lopez",
       "document": "1033555888",
-      "phone": "+57 3135556666",
+      "phoneNumber": "+57 3135556666",
       "email": "pepito.lopez@correo.com"
     },
     {
@@ -43,7 +43,7 @@
       "name": "Juanito",
       "lastName": "Alcachofa",
       "document": "1033555889",
-      "phone": "+57 3135556665",
+      "phoneNumber": "+57 3135556665",
       "email": "Juanito.Alcachofa@correo.com"
     },
     {
@@ -51,25 +51,33 @@
       "name": "Peranito",
       "lastName": "Lopez",
       "document": "1033555810",
-      "phone": "+57 3135556668",
+      "phoneNumber": "+57 3135556668",
       "email": "Peranito.Lopez@correo.com"
     },
     {
       "name": "Lala",
       "lastName": "Lulu",
       "document": "1033555811",
-      "phone": "+57 3135556611",
+      "phoneNumber": "+57 3135556611",
       "email": "Lala.Lulu@correo.com",
       "id": 4
+    },
+    {
+      "name": "karen",
+      "lastName": "chica",
+      "document": "1001733628",
+      "email": "correo@correo.com",
+      "phoneNumber": "+57 3148019752",
+      "id": 5
     }
   ],
   "products": [
     {
-      "nameProduct": "Jalea de pera",
+      "nameProduct": "Jalea de pera organica",
       "price": 2000,
       "amount": 5,
-      "expirationDate": "2022-10-29",
-      "provider": "12",
+      "expirationDate": "2022-10-21",
+      "provider": "21",
       "id": 2
     },
     {

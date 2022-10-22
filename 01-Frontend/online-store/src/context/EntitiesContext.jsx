@@ -1,6 +1,8 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { getProducts } from "../actions/products.action";
 import { getProviders } from "../actions/providers.action";
+import { getCustomer } from "../actions/customer.action";
+
 
 const EntitiesContext = createContext();
 
@@ -42,7 +44,7 @@ const EntitiesProvider = ({ children }) => {
   }, []);
 
   //Customer
-  const [customer, setCustomer]= useState ([]);
+  const [customers, setCustomer]= useState ([]);
 
  const getCustomerData = async()=>{
    try{
@@ -67,7 +69,7 @@ const EntitiesProvider = ({ children }) => {
           getProvidersData,
           products,
           getProductsData,
-          customer,
+          customers,
           getCustomerData
 
         }}
