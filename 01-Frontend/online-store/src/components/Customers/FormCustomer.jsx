@@ -85,6 +85,7 @@ const FormCustomer = ({id: idCustomer}) => {
           lastName: customers.lastName,
           document: customers.document,
           phoneNumber: customers.phoneNumber,
+          indicative: customers.indicative,
           email: customers.email,
         }}
         validationSchema={validationSchema}
