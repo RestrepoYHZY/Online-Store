@@ -69,6 +69,14 @@
       "email": "p@gmail.com",
       "phoneNumber": "+55 3210000022",
       "id": 5
+    },
+    {
+      "name": "Antonio",
+      "lastName": "perez",
+      "document": "24631945",
+      "email": "correo@correo.com",
+      "phoneNumber": "+54 3159865325",
+      "id": 6
     }
   ],
   "products": [
