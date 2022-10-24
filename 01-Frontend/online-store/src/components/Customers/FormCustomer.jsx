@@ -138,6 +138,7 @@ const FormCustomer = ({id: idCustomer}) => {
                 <Field type="number" name="indicative" />
                 <ErrorMessage name="indicative" />
               </Stack>
+              
               <Stack>
                 <InputLabel htmlFor="phoneNumber">Phone Number</InputLabel>
                 <Field type="number" name="phoneNumber" />
