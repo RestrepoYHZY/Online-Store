@@ -11,21 +11,9 @@ const TableBodyProducts = ({
   id:idProduct, nameProduct, price, amount, expirationDate, provider:idProvider
 }) => {
 
-  const [provider, setProvider]= useState("");
   const {getProductsData} =useEntities();
+  
 
-  const getProviderInfo = async ()=>{
-    try{
-      const { data }= await getProviderById(idProvider);
-      const { provider:name } = data;
-      setProvider(name)
-    }catch(error){
-      console.log(error);
-    }
-  }
-  useEffect(()=>{
-    getProviderInfo()
-  }, [])
  
   return (
     <>

@@ -22,6 +22,20 @@ const EntitiesProvider = ({ children }) => {
     }
   };
 
+  //ProvidersById
+
+  const [provider, setProvider]= useState("");
+
+  const getProviderInfo = async ()=>{
+    try{
+      const { data }= await getProviderById(idProvider);
+      const { provider:name } = data;
+      setProvider(name)
+    }catch(error){
+      console.log(error);
+    }
+  }
+
  //Products
 
  const [products, setProducts]= useState ([]);
@@ -50,6 +64,9 @@ const EntitiesProvider = ({ children }) => {
           getProvidersData,
           products,
           getProductsData,
+          setProvider,
+          provider,
+          getProviderInfo
 
         }}
       >
