@@ -23,6 +23,8 @@ const TableBodyProducts = ({
       console.log(error);
     }
   }
+
+  
   useEffect(()=>{
     getProviderInfo()
   }, [])
