@@ -14,22 +14,22 @@ const TableBodyCustomers = ({
     phoneNumber,
     email,
 }) => {
-  const {getCustomerData} = useEntities();
+  const { getCustomerData } = useEntities();
   return (
     <>
     <TableRow>
-        <TableCell align="center">{idCustomer}</TableCell>
-        <TableCell align="center">{name}</TableCell>
-        <TableCell align="center">{lastName}</TableCell>
-        <TableCell align="center">{document}</TableCell>
-        <TableCell align="center">{phoneNumber}</TableCell>
-        <TableCell align="center">{email}</TableCell>
+        <TableCell align="center">{ idCustomer }</TableCell>
+        <TableCell align="center">{ name }</TableCell>
+        <TableCell align="center">{ lastName }</TableCell>
+        <TableCell align="center">{ document }</TableCell>
+        <TableCell align="center">{ phoneNumber }</TableCell>
+        <TableCell align="center">{ email }</TableCell>
         <TableCell align="center">
-        <ModalCustomer id={idCustomer}/>
-          <Delete id={idCustomer}
-          name={name}
-          entity="customers"
-          getData={getCustomerData}
+        <ModalCustomer id={ idCustomer }/>
+          <Delete id={ idCustomer }
+          name={ `${ name } ${ lastName }` }
+          entity="customer"
+          getData={ getCustomerData }
           deleteAction={ deleteCustomer }
           />
         </TableCell>

@@ -6,8 +6,6 @@ import {
   TableRow,
   TableHead,
   TableBody,
-  IconButton,
-  Tooltip,
 } from "@mui/material";
 import React from "react";
 import { useEntities } from "../../../context/EntitiesContext";
