@@ -27,25 +27,25 @@ const TableBodyProducts = ({
   
   useEffect(()=>{
     getProviderInfo()
-  }, [])
+  }, [idProvider])
  
   return (
     <>
       <TableRow>
-        <TableCell align="center">{idProduct}</TableCell>
-        <TableCell align="center">{nameProduct}</TableCell>
-        <TableCell align="center">{price}</TableCell>
-        <TableCell align="center">{amount}</TableCell>
-        <TableCell align="center">{expirationDate}</TableCell>
-        <TableCell align="center">{provider} </TableCell>
+        <TableCell align="center">{ idProduct }</TableCell>
+        <TableCell align="center">{ nameProduct }</TableCell>
+        <TableCell align="center">{ price }</TableCell>
+        <TableCell align="center">{ amount }</TableCell>
+        <TableCell align="center">{ expirationDate }</TableCell>
+        <TableCell align="center">{ provider } </TableCell>
         <TableCell align="center">
-        <ModalProduct id={idProduct} />
+        <ModalProduct id={ idProduct } />
 
           <Delete
-           id={idProduct}
-            name={nameProduct} 
+           id={ idProduct }
+            name={ nameProduct } 
             entity="product"
-            getData= {getProductsData}
+            getData= { getProductsData }
             deleteAction={ deleteProducts } />
         </TableCell>
       </TableRow>
