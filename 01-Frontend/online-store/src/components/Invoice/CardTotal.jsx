@@ -1,42 +1,70 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from "@mui/material";
+import {
+  Paper,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from "@mui/material";
+import { useEffect, useState } from "react";
+import { getCustomerById } from "../../actions/customer.action";
 
+const labels = ["DATE", "Customer", "Total"];
 
-const CardTotal = ({ date, customer, total }) => {
-  return (<>
-     <Paper style={{ width:"91%" }}>
-      <TableContainer component={ Paper }>
-        <Table>
-          <TableHead>
-            <TableRow>
-            <TableCell>
-                  <Typography variant="h7" fontWeight={700}>
-                    Date:
-                  </Typography>
-                </TableCell>
-             
+const CardTotal = ({ date, customer = 0, total }) => {
+  const [customerName, setCustomerName] = useState("");
+
+  const getACustomer = async () => {
+    try {
+      const { data } = await getCustomerById(customer);
+      setCustomerName(`${data.name} ${data.lastName}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getACustomer();
+  }, [customer]);
+  return (
+    <>
+      <Paper style={{ width: "91%" }}>
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                {labels.map((item, index) => (
+                  <ColumnHead key={index} label={item} />
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
                 <TableCell>
-                  <Typography variant="h7" fontWeight={700}>
-                   Customer:
-                  </Typography>
+                  <Typography>{date}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h7" fontWeight={700}>
-                    Total:
-                  </Typography>
+                  <Typography>{customerName}</Typography>
                 </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell><Typography>{ date }</Typography></TableCell>
-              <TableCell><Typography>{ customer }</Typography></TableCell>
-              <TableCell> <Typography>{ total }</Typography></TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
-  </>)
-}
+                <TableCell>
+                  {" "}
+                  <Typography fontWeight={700}> ${total}</Typography>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
+    </>
+  );
+};
 
-export default CardTotal
+const ColumnHead = ({ label }) => (
+  <TableCell>
+    <Typography fontWeight={700}>{label}</Typography>
+  </TableCell>
+);
+
+export default CardTotal;
