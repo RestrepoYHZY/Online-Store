@@ -25,16 +25,16 @@ const TableDataInvoice = ({ id, product, price, amount, subTotal }) => {
     <>
       <TableRow>
         <TableCell>
-          <Typography variant="subtitle2">{productName}</Typography>
+          <Typography variant="subtitle2">{ productName }</Typography>
         </TableCell>
         <TableCell>
-          <Typography variant="subtitle2">{price}</Typography>
+          <Typography variant="subtitle2">{ price }</Typography>
         </TableCell>
         <TableCell>
-          <Typography variant="subtitle2">{amount}</Typography>
+          <Typography variant="subtitle2">{ amount }</Typography>
         </TableCell>
         <TableCell>
-          <Typography variant="subtitle2">{subTotal}</Typography>
+          <Typography variant="subtitle2">{ subTotal }</Typography>
         </TableCell>
         <TableCell>
           <IconButton size="medium" edge="start" color="primary">

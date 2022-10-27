@@ -30,8 +30,8 @@ const CardTotal = ({ date, customer = 0, total }) => {
   }, [customer]);
   return (
     <>
-      <Paper style={{ width: "91%" }}>
-        <TableContainer component={Paper}>
+      <Paper style={{ width: "80%" }} elevation={ 0 }  >
+        <TableContainer>
           <Table>
             <TableHead>
               <TableRow>

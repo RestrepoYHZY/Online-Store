@@ -1,4 +1,4 @@
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import React from 'react'
 import TableDataInvoice from './TableDataInvoice';
 
@@ -9,7 +9,7 @@ const TableInvoice = ({ data }) => {
 
   return (
     <>
-    <TableContainer component={ Paper }>
+    <TableContainer component={ Paper } elevation={ 0 }>
       <Table>
         <TableHead>
           <TableRow>
@@ -36,6 +36,10 @@ const TableInvoice = ({ data }) => {
 
       </Table>
     </TableContainer>
+
+    <Box align="end">
+      <Button variant="contained" color="primary" type="submit">Send</Button>
+    </Box >
     </>
   )
 }
