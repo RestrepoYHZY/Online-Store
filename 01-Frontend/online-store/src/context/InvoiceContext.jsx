@@ -11,6 +11,7 @@ export const InvoiceProvider = ({ children }) => {
   const [purchaseDate, setPurchaseDate] = useState("");
   const [purchaser, setPurchaser] = useState("");
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [infoToEdit, setInfoToEdit] = useState([]);
 
   const deleteElement = (id) => {
     const result = shoppingCart.filter((item) => item.id !== id);
@@ -28,6 +29,7 @@ export const InvoiceProvider = ({ children }) => {
           shoppingCart,
           setShoppingCart,
           deleteElement,
+          infoToEdit, setInfoToEdit
         }}
       >
         {children}
