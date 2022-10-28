@@ -3,6 +3,7 @@ import FieldsForm from './FieldsForm'
 import { useInvoice } from "../../../context/InvoiceContext";
 import { v4 as uuidv4} from 'uuid';
 import useFormInvoice from '../../../Hooks/useFormInvoice';
+import { useEffect } from 'react';
 
 const FormInvoice = () => {
 
@@ -18,7 +19,10 @@ const FormInvoice = () => {
     product,
     price,
     amount,
-    subTotal
+    subTotal,
+    resetForm,
+    elementId,
+    setElementId
   }= useFormInvoice();
 
   const tools={
@@ -36,8 +40,16 @@ const FormInvoice = () => {
     subTotal
   };
 
+  const editBuy=(data, dataToSend)=>{
+    let modifyingCart =[...data];
 
-  const {shoppingCart, setShoppingCart} = useInvoice()
+    const position = shoppingCart.findIndex(item=>item.id===elementId)
+    modifyingCart[position]=dataToSend;
+    return modifyingCart;
+  };
+  
+
+  const {shoppingCart, setShoppingCart, infoToEdit, setInfoToEdit} = useInvoice()
   
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -49,11 +61,24 @@ const FormInvoice = () => {
       amount:+amount,
       subTotal:+subTotal
     }
+    
+    resetForm();
+    // console.log(dataToSend)
+  
+    let newShoppingCart;
+    if(infoToEdit?.id){
+      newShoppingCart=editBuy(shoppingCart, dataToSend)
+      setShoppingCart([...newShoppingCart])
+      return
+    }
     setShoppingCart([...shoppingCart, dataToSend])
-    console.log(dataToSend)
-  }
 
+    setInfoToEdit({});
+    setElementId("");
 
+  };
+
+  
   return (
     <>
     <form onSubmit={ handleSubmit} style={{ width:"100%" }}>
