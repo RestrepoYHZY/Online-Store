@@ -37,9 +37,7 @@ const TableInvoice = ({ data }) => {
       </Table>
     </TableContainer>
 
-    <Box align="end">
-      <Button variant="contained" color="primary" type="submit">Send</Button>
-    </Box >
+   
     </>
   )
 }
