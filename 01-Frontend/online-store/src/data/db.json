@@ -62,14 +62,7 @@
       "email": "Lala.Lulu@correo.com",
       "id": 4
     },
-    {
-      "name": "Karen ",
-      "lastName": "Chica",
-      "document": "1000000",
-      "email": "p@gmail.com",
-      "phoneNumber": "+55 3210000022",
-      "id": 5
-    },
+    
     {
       "name": "Antonio",
       "lastName": "perez",
@@ -122,6 +115,66 @@
     }
   ],
   "invoice": [
- 
+    
+    {
+      "code": "258ac602-e45e-45d5-9203-98d6eb37e789",
+      "customer": "3",
+      "date": "2022-10-28",
+      "total": 50000,
+      "products": [
+        {
+          "id": "716feef3-6de8-4af3-927e-45dba79480e3",
+          "product": "3",
+          "price": 10000,
+          "amount": 5,
+          "subTotal": 50000
+        }
+      ],
+      "id": 3
+    },
+    {
+      "code": "6107f66d-0bdc-42fe-9ea7-8b9527142521",
+      "customer": "4",
+      "date": "2022-10-29",
+      "total": 32006,
+      "products": [
+        {
+          "id": "ae028242-a19f-4789-b347-30f8f18cefc7",
+          "product": "7",
+          "price": 2000,
+          "amount": 2,
+          "subTotal": 4000
+        },
+        {
+          "id": "ef675784-7022-4d47-abb4-d4683cb08fcd",
+          "product": "3",
+          "price": 10000,
+          "amount": 1,
+          "subTotal": 10000
+        },
+        {
+          "id": "a2ae7572-e73e-42cc-b84f-ecdea3a6f21a",
+          "product": "2",
+          "price": 2000,
+          "amount": 6,
+          "subTotal": 12000
+        },
+        {
+          "id": "496a55e8-0404-499e-a55f-284bc1bd0f28",
+          "product": "7",
+          "price": 2000,
+          "amount": 3,
+          "subTotal": 6000
+        },
+        {
+          "id": "de1226f0-9760-4587-9658-1863a0b13071",
+          "product": "6",
+          "price": 3,
+          "amount": 2,
+          "subTotal": 6
+        }
+      ],
+      "id": 4
+    }
   ]
 }
