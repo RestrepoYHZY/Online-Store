@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { getProducts } from "../actions/products.action";
 import { getProviders } from "../actions/providers.action";
 import { getCustomer } from "../actions/customer.action";
+import { getInvoices } from "../actions/invoice.action";
 
 
 const EntitiesContext = createContext();
@@ -40,11 +41,7 @@ const EntitiesProvider = ({ children }) => {
    }
  };
 
-  useEffect(() => {
-    getProvidersData();
-    getProductsData();
-  }, []);
-
+  
   //Customer
   const [customers, setCustomer]= useState ([]);
 
@@ -58,8 +55,24 @@ const EntitiesProvider = ({ children }) => {
    }
  };
 
+// list invoice
+const [listInvoices, setListInvoice] =useState([])
+
+const getListInvoicesData = async () =>{
+  try{
+    const { data } = await getInvoices();
+    setListInvoice(data);
+  }catch(error){
+    console.log(error)
+  };
+};
+
+
   useEffect(() => {
-   getCustomerData();
+    getProvidersData();
+    getProductsData();
+    getCustomerData();
+    getListInvoicesData();
   }, []);
 
 
@@ -72,7 +85,9 @@ const EntitiesProvider = ({ children }) => {
           products,
           getProductsData,
           customers,
-          getCustomerData
+          getCustomerData,
+          listInvoices,
+          getListInvoicesData
 
         }}
       >
