@@ -16,7 +16,7 @@ const NewInvoce = () => {
   const { shoppingCart, purchaser, purchaseDate } = useInvoice();
 
   const getTotalPrice = () => {
-    const subTotals = shoppingCart.map((item) => item?.subTotal);
+    const subTotals = shoppingCart?.map((item) => item?.subTotal);
 
     if (subTotals.length > 0) {
       const result = subTotals.reduce((amount, item) => amount + item, 0);
@@ -34,7 +34,7 @@ const NewInvoce = () => {
         <Typography variant="h5">New Invoice</Typography>
         <FormInvoice />
         <Box>
-          {shoppingCart.length > 0 && (
+          {shoppingCart?.length > 0 && (
             <Stack
               style={{ height: "100%" }}
               justifyContent="space-between"

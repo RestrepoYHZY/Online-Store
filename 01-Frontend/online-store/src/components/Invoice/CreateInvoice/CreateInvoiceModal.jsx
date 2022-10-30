@@ -17,7 +17,10 @@ const CreateInvoiceModal = ({ total }) => {
     setSuccess(false)
     setError(false)
   };
-  const { shoppingCart, purchaser, purchaseDate } = useInvoice();
+  const { 
+    shoppingCart, setShoppingCart, 
+    purchaser, setPurchaser, 
+    purchaseDate, setPurchaseDate } = useInvoice();
   
   const saveInvoice = async () =>{
     setLoading(true);
@@ -33,7 +36,7 @@ const CreateInvoiceModal = ({ total }) => {
       const data = await postInvoices(dataToSend)
       setSuccess(true);
       setLoading(false);
-      console.log(data);
+     
     }catch(error){
       setError(true);
       setSuccess(true);
@@ -41,6 +44,14 @@ const CreateInvoiceModal = ({ total }) => {
       console.log(error);
     };
   };
+
+  const handleClose=()=>{
+    handleOpen();
+    setShoppingCart([]);
+    setPurchaseDate("");
+    setPurchaser("");
+
+  }
   return (
     <>
       <Typography textAlign="end">
@@ -64,7 +75,7 @@ const CreateInvoiceModal = ({ total }) => {
                    <Button
                      variant="contained"
                      color="primary"
-                     onClick={handleOpen}  
+                     onClick={handleClose}  
                    >OK
                    </Button>
                  </Box >

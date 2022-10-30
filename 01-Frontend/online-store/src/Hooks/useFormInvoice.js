@@ -13,7 +13,7 @@ const useFormInvoice = () => {
   const [elementId, setElementId] = useState(0);
   
 
-  const { customers, products } = useEntities();
+  const { customers, products, success } = useEntities();
 
   const { setPurchaseDate, setPurchaser, infoToEdit } = useInvoice();
 
@@ -73,6 +73,13 @@ const useFormInvoice = () => {
     };
   },[infoToEdit])
 
+  useEffect(() => {
+    if(!success){
+      setDate("")
+      setCustomer("")
+    };
+  },[success])
+
   return {
     date,
     setDate: handleDate,
@@ -83,6 +90,7 @@ const useFormInvoice = () => {
     getAProduct,
     multiplyPrice,
     product,
+    setProduct,
     price,
     amount,
     subTotal,
