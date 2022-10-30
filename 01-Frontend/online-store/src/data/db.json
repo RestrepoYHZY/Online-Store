@@ -31,20 +31,12 @@
   ],
   "customers": [
     {
-      "id": 1,
       "name": "Pepito Juan",
       "lastName": "Lopez",
       "document": "1033555888",
+      "email": "pepito.lopez@correo.com",
       "phoneNumber": "+57 3135556666",
-      "email": "pepito.lopez@correo.com"
-    },
-    {
-      "id": 2,
-      "name": "Juanito",
-      "lastName": "Alcachofa",
-      "document": "1033555889",
-      "phoneNumber": "+57 3135556665",
-      "email": "Juanito.Alcachofa@correo.com"
+      "id": 1
     },
     {
       "id": 3,
@@ -62,7 +54,6 @@
       "email": "Lala.Lulu@correo.com",
       "id": 4
     },
-    
     {
       "name": "Antonio",
       "lastName": "perez",
@@ -78,7 +69,7 @@
       "price": 2000,
       "amount": 5,
       "expirationDate": "2022-10-21",
-      "provider": "21",
+      "provider": "19",
       "id": 2
     },
     {
@@ -115,7 +106,6 @@
     }
   ],
   "invoice": [
-    
     {
       "code": "258ac602-e45e-45d5-9203-98d6eb37e789",
       "customer": "3",
@@ -175,6 +165,93 @@
         }
       ],
       "id": 4
+    },
+    {
+      "code": "064fa7be-5935-46fb-9a91-30e3c9e0a67d",
+      "customer": "1",
+      "date": "2022-10-28",
+      "total": 70000,
+      "products": [
+        {
+          "id": "6718d71f-b3fc-4303-9c99-f5f25911c36a",
+          "product": "3",
+          "price": 10000,
+          "amount": 7,
+          "subTotal": 70000
+        }
+      ],
+      "id": 5
+    },
+    {
+      "code": "44a339ea-179d-4ddc-b403-ab34228842de",
+      "customer": "1",
+      "date": "2022-10-28",
+      "total": 70000,
+      "products": [
+        {
+          "id": "6718d71f-b3fc-4303-9c99-f5f25911c36a",
+          "product": "3",
+          "price": 10000,
+          "amount": 7,
+          "subTotal": 70000
+        }
+      ],
+      "id": 6
+    },
+    {
+      "code": "48da586d-65d5-4095-bd37-ebf9ef86e184",
+      "customer": "",
+      "date": "",
+      "total": 0,
+      "products": [
+        {
+          "id": "2c03d4bd-380f-41d6-a3de-d0a29b7d5adb",
+          "product": "",
+          "price": 0,
+          "amount": 0,
+          "subTotal": 0
+        }
+      ],
+      "id": 7
+    },
+    {
+      "code": "5608be9b-c9cb-4046-a832-f018bed3a32d",
+      "customer": "1",
+      "date": "2022-10-29",
+      "total": 12000,
+      "products": [
+        {
+          "id": "66a050a9-0734-4389-9e7a-b3f5ef638d6a",
+          "product": "2",
+          "price": 2000,
+          "amount": 6,
+          "subTotal": 12000
+        }
+      ],
+      "id": 8
+    },
+    {
+      "code": "e5bb2d6f-18c8-4ee3-a34a-85e7ee48aca8",
+      "customer": "4",
+      "date": "2022-10-28",
+      "total": 94000,
+      "products": [
+        {
+          "id": "f2bca820-e2e6-405d-b054-309fe8be789c",
+          "product": "2",
+          "price": 2000,
+          "amount": 7,
+          "subTotal": 14000
+        },
+        {
+          "id": "80d45e6f-b769-4624-8210-b762ed429115",
+          "product": "4",
+          "price": 10000,
+          "amount": 8,
+          "subTotal": 80000
+        }
+      ],
+      "id": 9
     }
   ]
 }

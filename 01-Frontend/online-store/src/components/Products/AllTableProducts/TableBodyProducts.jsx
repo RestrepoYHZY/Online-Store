@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {  TableCell, TableRow } from "@mui/material";
 
 import { getProviderById } from "../../../actions/providers.action";
-import Delete from "../../Delete/Delete";
+import Delete from "../../AlertModal/Delete";
 import { useEntities } from "../../../context/EntitiesContext";
 import { deleteProducts } from "../../../actions/products.action";
 import ModalProduct from "../ModalProduct";

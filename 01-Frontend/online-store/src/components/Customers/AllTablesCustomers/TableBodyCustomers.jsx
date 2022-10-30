@@ -1,7 +1,7 @@
 import { TableCell, TableRow } from '@mui/material'
 import React from 'react'
 import { useEntities } from '../../../context/EntitiesContext'
-import Delete from '../../Delete/Delete'
+import Delete from '../../AlertModal/Delete'
 import ModalCustomer from '../ModalCustomer'
 import { deleteCustomer } from "../../../actions/customer.action";
 

@@ -8,11 +8,16 @@ import { getInvoices } from "../actions/invoice.action";
 const EntitiesContext = createContext();
 
 const useEntities = () => {
+
+
   const context = useContext(EntitiesContext);
   if (context) return context;
 };
 const EntitiesProvider = ({ children }) => {
-
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading]= useState(false);
+  
   // PROVIDERS
   const [providers, setProviders] = useState([]);
 
@@ -87,7 +92,10 @@ const getListInvoicesData = async () =>{
           customers,
           getCustomerData,
           listInvoices,
-          getListInvoicesData
+          getListInvoicesData,
+          success, setSuccess,
+          error, setError,
+          loading, setLoading
 
         }}
       >

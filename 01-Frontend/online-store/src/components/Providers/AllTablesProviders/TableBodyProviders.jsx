@@ -2,7 +2,7 @@ import React from "react";
 import {  TableCell, TableRow } from "@mui/material";
 
 import ModalProvider from "../ModalProvider";
-import Delete from "../../Delete/Delete";
+import Delete from "../../AlertModal/Delete";
 import { useEntities } from "../../../context/EntitiesContext";
 import { deleteProviders } from "../../../actions/providers.action";
 
