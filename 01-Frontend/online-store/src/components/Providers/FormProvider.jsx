@@ -1,4 +1,4 @@
-import { Button, InputLabel } from "@mui/material";
+import { Button, CircularProgress, InputLabel } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
@@ -26,23 +26,37 @@ const FormProvider = ({ id: idProvider }) => {
     phoneNumber: 0,
   });
 
-  const {getProvidersData}= useEntities();
+  const { getProvidersData, setSuccess, setError, loading, setLoading }= useEntities();
+
   const sendProviders = async (data) => {
+    setLoading(true);
     try {
       const result = await postProviders(data);
       console.log(result);
+      setSuccess(true);
+      setLoading(false);
       getProvidersData();
     } catch (error) {
+      setSuccess(true);
+      setError(true);
+      setLoading(false);
       console.log(error);
     }
   };
 
   const updateProviders = async (id, data) => {
+    setLoading(true);
     try {
       const result = await putProviders(id, data);
       console.log(result);
+      setSuccess(true);
+      setLoading(false);
+
       getProvidersData();
     } catch (error) {
+      setSuccess(true);
+      setError(true);
+      setLoading(false);
       console.log(error);
     }
   };
@@ -80,6 +94,11 @@ const FormProvider = ({ id: idProvider }) => {
   }, []);
   return (
     <>
+    {loading ? (
+        <center>
+          <CircularProgress color="primary" />
+        </center>
+      ) : (
       <Formik
         initialValues={{
           id: idProvider,
@@ -153,6 +172,7 @@ const FormProvider = ({ id: idProvider }) => {
           </Form>
         )}
       </Formik>
+      )}
     </>
   );
 };

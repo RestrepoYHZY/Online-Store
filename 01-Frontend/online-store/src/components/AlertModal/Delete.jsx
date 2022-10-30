@@ -1,4 +1,4 @@
-import { Tooltip, IconButton, Modal, Paper, Button, Box, CircularProgress } from "@mui/material";
+import { Tooltip, IconButton, Modal, Paper, Button, Box, CircularProgress, Typography } from "@mui/material";
 import React, { Fragment, useState } from "react";
 
 import { IoTrashOutline } from "react-icons/io5";
@@ -53,6 +53,9 @@ const Delete = ({ id, name, entity, getData, deleteAction }) => {
       <Modal open={open} onClose={handleOpen}>
         
           <Paper style={style}>
+          {/* <Typography variant="h6" align="center">
+          Delete { entity } 
+       </Typography> */}
           {loading?
           <center>
             <CircularProgress color="primary" />

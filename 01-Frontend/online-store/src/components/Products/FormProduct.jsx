@@ -1,4 +1,4 @@
-import { Button, InputLabel } from "@mui/material";
+import { Button, CircularProgress, InputLabel } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
@@ -14,7 +14,7 @@ const validationSchema = Yup.object().shape({
 });
 
 const FormProduct = ({id:idProduct}) => {
-  const { providers, getProductsData } = useEntities();
+  const { providers, getProductsData, setSuccess, setError, loading, setLoading} = useEntities();
 
   const [products, setProduct]=useState({
     id:0,
@@ -27,11 +27,17 @@ const FormProduct = ({id:idProduct}) => {
 
 
   const sendProducts = async (data) => {
+    setLoading(true);
     try {
       const result = await postProducts(data);
        console.log(result);
+       setSuccess(true);
+      setLoading(false);
       getProductsData();
     } catch (error) {
+      setSuccess(true);
+      setError(true);
+      setLoading(false);
       console.log(error);
     }
   };
@@ -39,11 +45,17 @@ const FormProduct = ({id:idProduct}) => {
 
 
   const updateProducts = async (id, data) => {
+    setLoading(true);
     try {
       const result = await putProducts(id, data);
        console.log(result);
+       setSuccess(true);
+      setLoading(false);
       getProductsData();
     } catch (error) {
+      setSuccess(true);
+      setError(true);
+      setLoading(false);
       console.log(error);
     }
   };
@@ -68,6 +80,11 @@ const FormProduct = ({id:idProduct}) => {
 
   return (
     <>
+    {loading ? (
+        <center>
+          <CircularProgress color="primary" />
+        </center>
+      ) : (
       <Formik
         initialValues={{
           id:idProduct,
@@ -136,6 +153,7 @@ const FormProduct = ({id:idProduct}) => {
           </Form>
         )}
       </Formik>
+      )}
     </>
   );
 };

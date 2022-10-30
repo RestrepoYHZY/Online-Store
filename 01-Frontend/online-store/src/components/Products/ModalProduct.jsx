@@ -5,13 +5,16 @@ import { useEntities } from "../../context/EntitiesContext";
 import { styleModal } from "../../styles/theme";
 import FormProduct from "./FormProduct";
 import { IoCreateOutline } from "react-icons/io5";
+import Result from "../AlertModal/Result";
 
 const ModalProduct = ({id}) => {
   const [open, setOpen] = useState(false);
- const {getProductsData} = useEntities();
+ const {getProductsData, success, setSuccess, error, setError} = useEntities();
 
  const handleOpen = () => {
   setOpen((e) => !e);
+  setSuccess(false);
+  setError(false);
   getProductsData();//Aca llamo de entities
 };
   return (
@@ -42,16 +45,18 @@ const ModalProduct = ({id}) => {
      
 
       <Modal open={open} onClose={handleOpen}>
-        <Box sx={styleModal}>
-           
-
-           {!id ? 
-             <Typography variant= "h6" align='center'>New Product</Typography>
-             :
-             <Typography variant= "h6" align='center'>Edit Product</Typography>
-           }
+        <Box sx={styleModal}>   
+          <Typography variant= "h6" align='center'>{!id ? "Add" : "Edit"}Product</Typography>
+          {success?
+            <Result hasError={ error } action={!id ? "Add" : "Edit"}>
+              <Box align="end">
+                <Button variant="contained" color="primary" onClick={ handleOpen }> OK</Button>
+              </Box>
+            </Result>
+            :  
            
           <FormProduct id={id} />
+        }
         </Box>
       </Modal>
     </>

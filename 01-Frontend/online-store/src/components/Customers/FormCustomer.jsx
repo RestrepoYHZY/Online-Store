@@ -24,12 +24,12 @@ const FormCustomer = ({ id: idCustomer }) => {
 
   const [customers, setCustomer] = useState({
     id: 0,
-    name: "borra",
-    lastName: "borra",
-    document: "7777",
-    indicative: "77",
-    phoneNumber: "077",
-    email: "hello@correo.com",
+    name: "",
+    lastName: "",
+    document: "",
+    indicative: 0,
+    phoneNumber: 0,
+    email: "",
   });
 
   const { getCustomerData, setSuccess, setError, loading, setLoading } = useEntities();
