@@ -1,7 +1,7 @@
 import {  Stack, Typography } from "@mui/material";
 import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
-const Result = ({ hasError, children }) => {
+const Result = ({ action, hasError, children }) => {
   return (<>
     { hasError?
       <ResultComponent 
@@ -11,7 +11,7 @@ const Result = ({ hasError, children }) => {
       :
       <ResultComponent 
         Icon={ IoCheckmarkCircleOutline }
-        msg="Succesfully Delete"
+        msg={`Succesfully ${ action }`}
       />
     }
     <Stack spacing={ 2 }>

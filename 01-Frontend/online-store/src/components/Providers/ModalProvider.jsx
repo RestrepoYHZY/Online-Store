@@ -5,14 +5,17 @@ import { styleModal } from "../../styles/theme";
 import FormProvider from "./FormProvider";
 import { IoCreateOutline } from "react-icons/io5";
 import { useEntities } from "../../context/EntitiesContext";
+import Result from "../AlertModal/Result";
 
 const ModalProvider = ({ id}) => {
   const [open, setOpen] = useState(false);
 
-  const {getProvidersData}= useEntities();
+  const { getProvidersData, success, setSuccess, error, setError }= useEntities();
 
   const handleOpen = () => {
     setOpen((e) => !e);
+    setSuccess(false);
+    setError(false);
     getProvidersData();//Aca llamo de entities
   };
 
@@ -40,19 +43,19 @@ const ModalProvider = ({ id}) => {
       <Modal open={open} onClose={handleOpen}>
         <Box sx={styleModal}>
          
-          {!id ? 
          <Typography variant="h6" align="center">
-         New Provider
+          {!id ? "Add" : "Edit"} Provider
        </Typography>
-
-       : 
-        <Typography variant="h6" align="center">
-        Edit Provider
-      </Typography>
-
-      }
+       {success?
+            <Result hasError={ error } action={!id ? "Add" : "Edit"}>
+              <Box align="end">
+                <Button variant="contained" color="primary" onClick={ handleOpen }> OK</Button>
+              </Box>
+            </Result>
+            : 
 
           <FormProvider id={id}/>
+       }
         </Box>
       </Modal>
     </>

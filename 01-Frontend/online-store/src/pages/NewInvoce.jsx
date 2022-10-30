@@ -6,8 +6,9 @@ import { Stack, Typography, Container, Box, Button } from "@mui/material";
 import TableInvoice from "../components/Invoice/TableInvoice/TableInvoice";
 import TableDataInvoice from "../components/Invoice/TableInvoice/TableDataInvoice";
 import { useInvoice } from "../context/InvoiceContext";
-import { v4 as uuidV4 } from "uuid";
+
 import { postInvoices } from "../actions/invoice.action";
+import CreateInvoiceModal from "../components/Invoice/CreateInvoice/CreateInvoiceModal";
 
 const NewInvoce = () => {
   const [total, setTotal] = useState(0);
@@ -15,29 +16,14 @@ const NewInvoce = () => {
   const { shoppingCart, purchaser, purchaseDate } = useInvoice();
 
   const getTotalPrice = () => {
-    const subTotals = shoppingCart.map((item) => item?.subTotal);
+    const subTotals = shoppingCart?.map((item) => item?.subTotal);
 
     if (subTotals.length > 0) {
       const result = subTotals.reduce((amount, item) => amount + item, 0);
       setTotal(result);
     }
   };
-  const saveInvoice = async () =>{
-    const dataToSend = {
-      code: uuidV4(),
-      customer: purchaser,
-      date: purchaseDate,
-      total: total,
-      products:[...shoppingCart]
-    };
-
-    try{
-      const data = await postInvoices(dataToSend)
-      console.log(data);
-    }catch(error){
-      console.log(error);
-    };
-  };
+  
   useEffect(() => {
     getTotalPrice();
   }, [shoppingCart]);
@@ -48,7 +34,7 @@ const NewInvoce = () => {
         <Typography variant="h5">New Invoice</Typography>
         <FormInvoice />
         <Box>
-          {shoppingCart.length > 0 && (
+          {shoppingCart?.length > 0 && (
             <Stack
               style={{ height: "100%" }}
               justifyContent="space-between"
@@ -62,11 +48,8 @@ const NewInvoce = () => {
                 />
                 <TableInvoice data={shoppingCart} />
               </Fragment>
-              <Typography textAlign="end">
-                <Button variant="contained" onClick={saveInvoice}>
-                  Save Invoice
-                </Button>
-              </Typography>
+              <CreateInvoiceModal
+              total={ total }/>
             </Stack>
           )}
         </Box>
