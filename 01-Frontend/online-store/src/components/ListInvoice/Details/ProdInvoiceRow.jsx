@@ -1,19 +1,13 @@
 import {
-  Table,
+  
   TableCell,
-  TableContainer,
-  TableHead,
   TableRow,
-  TableBody,
-  Paper,
   Typography,
-  Box,
-  Button,
-  Stack,
+ 
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { getProductById } from "../../../actions/products.action";
-import CardInvoice from "../TablesInvoices/CardInvoice";
+
 
 const ProdInvoiceRow = ({ product:IdProduct, price, amount, subTotal }) => {
 

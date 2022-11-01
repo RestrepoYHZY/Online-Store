@@ -16,6 +16,7 @@ const obj = {
     fontFamily: [
       'Inter Tight', 'sans-serif'
     ].join(','),
+  
     
   }
   

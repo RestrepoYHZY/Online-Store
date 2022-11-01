@@ -1,4 +1,4 @@
-import { Box, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import React from 'react'
 import TableDataInvoice from './TableDataInvoice';
 
@@ -14,7 +14,7 @@ const TableInvoice = ({ data }) => {
         <TableHead>
           <TableRow>
             { labels.map((item, index)=>(
-              <TableCell key={ index }>
+              <TableCell  key={ index }>
                   <Typography fontWeight={ 700 }>{ item }</Typography>
               </TableCell>
             ))}

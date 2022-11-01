@@ -1,4 +1,4 @@
-import { Button, CircularProgress, InputLabel } from "@mui/material";
+import { Button, CircularProgress, InputLabel, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
@@ -134,24 +134,40 @@ const FormProvider = ({ id: idProvider }) => {
           console.log(dataToSendP);
         }}
       >
-        {() => (
+        {(errors, touched ) => (
           <Form>
             <Stack spacing={2}>
+
               <Stack>
-                <InputLabel htmlFor="provider">Provider</InputLabel>
-                <Field type="text" name="provider" />
-                <ErrorMessage name="provider" />
+              <Field 
+                type="text" 
+                name="provider" 
+                label="Provider" 
+                as={ TextField } 
+                size="small"
+                error ={Boolean(errors.provider) && Boolean(touched.provider)}
+                helperText={Boolean(touched.provider) && Boolean(errors.provider)}
+                />
               </Stack>
 
               <Stack>
-                <InputLabel htmlFor="nit">Nit</InputLabel>
-                <Field type="string" name="nit" />
-                <ErrorMessage name="nit" />
+                
+                <Field 
+                type="number" 
+                name="nit" 
+                label="Nit" 
+                as={ TextField } 
+                size="small"
+                />
+                
               </Stack>
               <Stack>
-                <InputLabel htmlFor="address">Address</InputLabel>
-                <Field type="string" name="address" />
-                <ErrorMessage name="address" />
+                <TextField
+                type="string" 
+                name="address" 
+                label="Address" 
+                size="small"
+                />
               </Stack>
               <Stack>
                 <InputLabel htmlFor="indicative">Indicative</InputLabel>

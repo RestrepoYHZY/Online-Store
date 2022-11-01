@@ -33,20 +33,20 @@ const TableDataInvoice = ({ id, product, price, amount, subTotal }) => {
   }, [product]);
   return (
     <>
-      <TableRow>
+      <TableRow >
         <TableCell>
-          <Typography variant="subtitle2">{ productName }</Typography>
+          <Typography  variant="subtitle2">{ productName }</Typography>
         </TableCell>
-        <TableCell>
-          <Typography variant="subtitle2">{ price }</Typography>
+        <TableCell >
+          <Typography  variant="subtitle2">{ price }</Typography>
         </TableCell>
-        <TableCell>
+        <TableCell >
           <Typography variant="subtitle2">{ amount }</Typography>
         </TableCell>
-        <TableCell>
+        <TableCell >
           <Typography variant="subtitle2">{ subTotal }</Typography>
         </TableCell>
-        <TableCell>
+        <TableCell >
         <Tooltip title="Edit">
           <IconButton size="medium" edge="start" color="primary" onClick={ filterShoppingCart }>
             <IoCreateOutline />

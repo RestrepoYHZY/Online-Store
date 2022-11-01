@@ -78,10 +78,10 @@ const FormInvoice = () => {
 
   };
 
-  
+
   return (
     <>
-    <form onSubmit={ handleSubmit} style={{ width:"100%" }}>
+    <form onSubmit={ handleSubmit} style={{ width:"100", marginLeft: "4em"  }}>
       <Grid container spacing={ 4 }>
         <FieldsForm tools={ tools }/>
           <Grid item xs={ 2 } alignSelf="center" justifyContent= "center">

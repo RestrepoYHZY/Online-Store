@@ -9,7 +9,7 @@ const QuestionMsg = ({ children, msg }) => {
       <IoAlertCircleOutline style={{ fontSize:"8rem" }} />
     </Typography>
     
-    <Typography textAlign="center" variant="h5">Are you sure?</Typography>
+   
     <Stack spacing={ 3 }>
     <Typography textAlign="center" variant="h6">{ msg } </Typography>
    
