@@ -11,7 +11,7 @@ import {
 import { useEffect, useState } from "react";
 import { getCustomerById } from "../../actions/customer.action";
 
-const labels = ["DATE", "Customer", "Total"];
+const labels = ["DATE", "CUSTOMER", "TOTAL"];
 
 const CardTotal = ({ date, customer = 0, total }) => {
   const [customerName, setCustomerName] = useState("");
@@ -30,7 +30,7 @@ const CardTotal = ({ date, customer = 0, total }) => {
   }, [customer]);
   return (
     <>
-      <Paper style={{ width: "80%" }} elevation={ 0 }  >
+      <Paper style={{ width: "70%", marginLeft: "13em",  marginTop: "1em"  }} elevation={ 1 }  >
         <TableContainer>
           <Table>
             <TableHead>
@@ -42,13 +42,13 @@ const CardTotal = ({ date, customer = 0, total }) => {
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>
+                <TableCell align="center">
                   <Typography>{date}</Typography>
                 </TableCell>
-                <TableCell>
+                <TableCell align="center">
                   <Typography>{customerName}</Typography>
                 </TableCell>
-                <TableCell>
+                <TableCell align="center">
                   {" "}
                   <Typography fontWeight={700}> ${total}</Typography>
                 </TableCell>
@@ -63,7 +63,7 @@ const CardTotal = ({ date, customer = 0, total }) => {
 
 const ColumnHead = ({ label }) => (
   <TableCell>
-    <Typography fontWeight={700}>{label}</Typography>
+    <Typography align="center" fontWeight={700}>{label}</Typography>
   </TableCell>
 );
 

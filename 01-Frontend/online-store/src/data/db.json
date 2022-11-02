@@ -3,7 +3,7 @@
     {
       "provider": "Yhaizley",
       "nit": "343",
-      "address": "calle",
+      "address": "calle24",
       "phoneNumber": "+57 3197842892",
       "id": 12
     },
@@ -27,6 +27,34 @@
       "address": "calle Falsa 242",
       "phoneNumber": "+55 3197842892",
       "id": 22
+    },
+    {
+      "provider": "Distrubidor h",
+      "nit": "9000000-2",
+      "address": "calle Falsa 242",
+      "phoneNumber": "+66 3197842892",
+      "id": 23
+    },
+    {
+      "provider": "Distrubidor I",
+      "nit": "434434",
+      "address": "calle Falsa 242",
+      "phoneNumber": "+77 3197842892",
+      "id": 26
+    },
+    {
+      "provider": "Distrubidor C",
+      "nit": "9000000-5",
+      "address": "calle Falsa 245",
+      "phoneNumber": "+95 3197842895",
+      "id": 27
+    },
+    {
+      "provider": "Distrubidor R",
+      "nit": "9000000-3",
+      "address": "calle Falsa 242",
+      "phoneNumber": "+54 3197842892",
+      "id": 28
     }
   ],
   "customers": [
@@ -58,7 +86,7 @@
       "name": "Antonio",
       "lastName": "perez",
       "document": "24631945",
-      "email": "correo@correo.com",
+      "email": "correo@correo.coF",
       "phoneNumber": "+54 3159865325",
       "id": 6
     }
@@ -199,22 +227,6 @@
       "id": 6
     },
     {
-      "code": "48da586d-65d5-4095-bd37-ebf9ef86e184",
-      "customer": "",
-      "date": "",
-      "total": 0,
-      "products": [
-        {
-          "id": "2c03d4bd-380f-41d6-a3de-d0a29b7d5adb",
-          "product": "",
-          "price": 0,
-          "amount": 0,
-          "subTotal": 0
-        }
-      ],
-      "id": 7
-    },
-    {
       "code": "5608be9b-c9cb-4046-a832-f018bed3a32d",
       "customer": "1",
       "date": "2022-10-29",
@@ -332,6 +344,54 @@
         }
       ],
       "id": 14
+    },
+    {
+      "code": "01ca1dc5-dc5f-4004-8cc2-3e421b7883bc",
+      "customer": "1",
+      "date": "2022-10-31",
+      "total": 90000,
+      "products": [
+        {
+          "id": "b397e09b-2e71-4a1a-8c94-73dc5addee3a",
+          "product": "3",
+          "price": 10000,
+          "amount": 9,
+          "subTotal": 90000
+        }
+      ],
+      "id": 15
+    },
+    {
+      "code": "17bdb960-ade5-493e-b40f-f087ba5daa0e",
+      "customer": "1",
+      "date": "2022-11-03",
+      "total": 40000,
+      "products": [
+        {
+          "id": "5f1b1070-5058-46b6-a05e-c8977c32c808",
+          "product": "3",
+          "price": 10000,
+          "amount": 4,
+          "subTotal": 40000
+        }
+      ],
+      "id": 16
+    },
+    {
+      "code": "0d5e1e30-b54b-48d9-be9e-a98fc00f17a5",
+      "customer": "1",
+      "date": "2022-11-02",
+      "total": 50000,
+      "products": [
+        {
+          "id": "01000e85-f685-42f2-885e-62cf9806b74d",
+          "product": "3",
+          "price": 10000,
+          "amount": 5,
+          "subTotal": 50000
+        }
+      ],
+      "id": 17
     }
   ]
 }

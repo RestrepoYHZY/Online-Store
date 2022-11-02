@@ -53,9 +53,6 @@ const Delete = ({ id, name, entity, getData, deleteAction }) => {
       <Modal open={open} onClose={handleOpen}>
         
           <Paper style={style}>
-          {/* <Typography variant="h6" align="center">
-          Delete { entity } 
-       </Typography> */}
           {loading?
           <center>
             <CircularProgress color="primary" />
@@ -66,7 +63,7 @@ const Delete = ({ id, name, entity, getData, deleteAction }) => {
               
             {!success ? (
               <QuestionMsg 
-              msg={ `You are going to delete the ${ entity } "${ name }"` }>
+              msg={ `Are you sure to delete the ${ entity } "${ name }" ?` }>
                 <Button variant="contained" color="primary" onClick={deleteFn}>
                   Confirm
                 </Button>

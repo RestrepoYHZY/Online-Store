@@ -6,10 +6,21 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  Typography,
 } from "@mui/material";
 
 import TableBodyProducts from "./TableBodyProducts";
 import { useEntities } from "../../../context/EntitiesContext";
+
+const labels = [
+  "Code",
+  "Product",
+  "Price",
+  "Amount",
+  "Expiration Date",
+  "Provider",
+  "Actions",
+];
 
 const TableProducts = () => {
   const { products } = useEntities(); //llamado de entites Context
@@ -21,13 +32,13 @@ const TableProducts = () => {
           <Table sx={{ minWidth: 650 }}>
             <TableHead>
               <TableRow>
-                <TableCell align="center">Code</TableCell>
-                <TableCell align="center">Product</TableCell>
-                <TableCell align="center">Price</TableCell>
-                <TableCell align="center">Amount</TableCell>
-                <TableCell align="center">Expiration Date</TableCell>
-                <TableCell align="center">Provider</TableCell>
-                <TableCell align="center">Actions</TableCell>
+                {labels.map((item, index) => (
+                  <TableCell key={index}>
+                    <Typography align="center" fontWeight={700}>
+                      {item}
+                    </Typography>
+                  </TableCell>
+                ))}
               </TableRow>
             </TableHead>
 

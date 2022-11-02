@@ -26,29 +26,29 @@ const TableTotal = ({ data }) => {
   }, []);
 
   return (<>
-     <TableContainer component={ Paper }>
+     <TableContainer component={ Paper }  style={{ width: "90%", marginLeft: "3em",  marginTop: "1em",  marginBottom:"1em"   }}>
       <Table>
         <TableHead>
           <TableRow>
             { labels.map((item,index)=>(
               <TableCell key={ index }>
-                <Typography fontWeight={ 700 }>{ item }:</Typography>
+                <Typography align="center" fontWeight={ 700 }>{ item }</Typography>
               </TableCell>
             )) }
           </TableRow>
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell>
+            <TableCell align="center" >
               <Typography>{ data.code }</Typography>
             </TableCell>
             <TableCell>
-              <Typography>{ data.date }</Typography>
+              <Typography align="center" >{ data.date }</Typography>
             </TableCell>
-            <TableCell>
+            <TableCell align="center" >
               <Typography>{ customer }</Typography>
             </TableCell>
-            <TableCell>
+            <TableCell align="center" >
               <Typography>{ data.total }</Typography>
             </TableCell>
           </TableRow>

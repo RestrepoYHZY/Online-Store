@@ -4,10 +4,9 @@ import CardTotal from "../components/Invoice/CardTotal";
 
 import { Stack, Typography, Container, Box, Button } from "@mui/material";
 import TableInvoice from "../components/Invoice/TableInvoice/TableInvoice";
-import TableDataInvoice from "../components/Invoice/TableInvoice/TableDataInvoice";
+
 import { useInvoice } from "../context/InvoiceContext";
 
-import { postInvoices } from "../actions/invoice.action";
 import CreateInvoiceModal from "../components/Invoice/CreateInvoice/CreateInvoiceModal";
 
 const NewInvoce = () => {
@@ -30,10 +29,10 @@ const NewInvoce = () => {
 
   return (
     <>
-      <Stack spacing={4}>
+      <Stack spacing={4}  style={{ margin: "2em" , marginTop: "5em"}}>
         <Typography variant="h5">New Invoice</Typography>
-        <FormInvoice />
-        <Box>
+          <FormInvoice />
+        <Box align="center">
           {shoppingCart?.length > 0 && (
             <Stack
               style={{ height: "100%" }}

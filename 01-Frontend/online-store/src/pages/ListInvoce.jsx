@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import CardInvoice from "../components/ListInvoice/TablesInvoices/CardInvoice";
 
-import TableList from "../components/ListInvoice/TablesInvoices/TableList";
+
 
 const ListInvoce = () => {
 const navigation = useNavigate();
@@ -11,7 +11,7 @@ const navigation = useNavigate();
     <>
       <Box style={{ margin: "2em", marginTop: "5em" }}>
         <Typography variant="h5">List Invoice</Typography>
-        <Box align="right">
+        <Box align="right" style={{ marginBottom: "1em"}}>
           <Button variant="contained" onClick={() => navigation("/NewInvoce")}>
             New Invoice
           </Button>

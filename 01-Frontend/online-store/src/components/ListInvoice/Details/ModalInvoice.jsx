@@ -1,4 +1,4 @@
-import { IconButton, Modal, Tooltip, Typography } from "@mui/material";
+import { Button, IconButton, Modal, Tooltip, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
@@ -16,7 +16,7 @@ const ModalInvoice = ({data}) => {
     <>
     
       <Tooltip title="View Invoice">
-        <Box align="center">
+        <Box align="center" style={{marginLeft:"-4em"}}>
           <IconButton
             onClick={openCloseModal}
             size="medium"
@@ -30,9 +30,12 @@ const ModalInvoice = ({data}) => {
 
       <Modal open={modal} onClose={openCloseModal}>
         <Box sx={styleModalInvoice}>
-        <Typography variant="h4" textAlign="center" fontWeight={ 700 }>Invoice Detail</Typography>
+        <Typography variant="h5" textAlign="center" style={{marginTop: "0.5em"}}>Invoice Detail</Typography>
         <TableTotal data={ data } />
           <TableProdInvoice data={ data } />
+         <Box  align="end"  style={{ marginTop: "1em"  }}>
+           <Button variant="contained" onClick={openCloseModal}> Close </Button>
+         </Box>
         </Box>
       </Modal>
     </>

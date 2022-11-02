@@ -1,5 +1,5 @@
 import { Box, Button, CircularProgress, Modal, Paper, Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useEntities } from "../../../context/EntitiesContext";
 import QuestionMsg from "../../AlertModal/QuestionMsg";
 import { v4 as uuidV4 } from "uuid";
@@ -62,11 +62,14 @@ const CreateInvoiceModal = ({ total }) => {
 
       <Modal open={open} onClose={handleOpen}>
       <Paper style={style}>
-        <Typography variant="h5" textAlign="center"> Add Invoice</Typography>
+        
         {loading?
         <center>
           <CircularProgress color="primary" />
         </center>
+        
+
+        
         :
          <div>
            {success?
@@ -82,15 +85,14 @@ const CreateInvoiceModal = ({ total }) => {
            </Result>
            :
             <QuestionMsg 
-            
-           msg="You are going to save this invoice"
-           >
-             <Stack direction="row" aligItems="center" justifyContent="center" spacing={ 2 }>
-             <Button variant="contained" onClick={ saveInvoice }>Confirm</Button>
-             <Button variant="contained" onClick={handleOpen}>Cancel</Button>
-          
-             </Stack>
-           </QuestionMsg>
+             msg="Are you going to save this invoice? "
+             >
+
+               <Stack direction="row" aligItems="center" justifyContent="center" spacing={ 2 }>
+                <Button variant="contained" onClick={ saveInvoice }>Confirm</Button>
+                <Button variant="contained" onClick={handleOpen}>Cancel</Button>
+               </Stack>
+             </QuestionMsg>
            }
          </div>
         }
