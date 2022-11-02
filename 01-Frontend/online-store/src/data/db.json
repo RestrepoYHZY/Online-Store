@@ -392,6 +392,22 @@
         }
       ],
       "id": 17
+    },
+    {
+      "code": "f688f76d-465a-48a3-b345-41c1c92955f0",
+      "customer": 3,
+      "date": "2022-11-02",
+      "total": 6000,
+      "products": [
+        {
+          "id": "e81dd793-ad78-4fd5-9bc0-66ba01448005",
+          "product": 2,
+          "price": 2000,
+          "amount": 3,
+          "subTotal": 6000
+        }
+      ],
+      "id": 18
     }
   ]
 }
