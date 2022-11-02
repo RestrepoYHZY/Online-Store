@@ -152,13 +152,9 @@ const FormProvider = ({ id: idProvider }) => {
 
               <Stack>
                 
-                <Field 
-                type="number" 
-                name="nit" 
-                label="Nit" 
-                as={ TextField } 
-                size="small"
-                />
+              <InputLabel htmlFor="nit">Nit</InputLabel>
+                <Field type="number" name="nit" />
+                <ErrorMessage name="nit" />
                 
               </Stack>
               <Stack>
