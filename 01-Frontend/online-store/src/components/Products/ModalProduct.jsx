@@ -46,7 +46,7 @@ const ModalProduct = ({id}) => {
 
       <Modal open={open} onClose={handleOpen}>
         <Box sx={styleModal}>   
-          <Typography variant= "h5" style={{margin: "0.5em"}} align='center'>{!id ? "Add" : "Edit"} Product</Typography>
+          <Typography variant= "h5" style={{margin: "0.5em", marginBottom: "1em"}} align='center'>{!id ? "Add" : "Edit"} Product</Typography>
           {success?
             <Result hasError={ error } action={!id ? "Add " : "Edit "}>
               <Box align="end">

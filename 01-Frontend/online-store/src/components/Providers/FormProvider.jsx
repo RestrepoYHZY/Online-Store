@@ -1,4 +1,4 @@
-import { Button, CircularProgress, InputLabel, TextField } from "@mui/material";
+import { Button, CircularProgress, InputLabel, TextField, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import * as Yup from "yup";
 import { postProviders, putProviders, getProviderById } from "../../actions/providers.action";
 import { useEntities } from "../../context/EntitiesContext";
+import { ErrorMsg } from "../../ValidationForm/ErrorMsg";
 
 
 const validationSchema = Yup.object().shape({
@@ -134,46 +135,62 @@ const FormProvider = ({ id: idProvider }) => {
           console.log(dataToSendP);
         }}
       >
-        {(errors, touched ) => (
+        {() => (
           <Form>
             <Stack spacing={2}>
 
               <Stack>
               <Field 
+                as={ TextField } 
+                label="Provider"
                 type="text" 
                 name="provider" 
-                label="Provider" 
-                as={ TextField } 
                 size="small"
-                error ={Boolean(errors.provider) && Boolean(touched.provider)}
-                helperText={Boolean(touched.provider) && Boolean(errors.provider)}
                 />
+                <ErrorMessage name="provider" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
 
               <Stack>
                 
-              <InputLabel htmlFor="nit">Nit</InputLabel>
-                <Field type="number" name="nit" />
-                <ErrorMessage name="nit" />
+              <Field 
+                as={ TextField } 
+                label="Nit" 
+                type="text" 
+                name="nit" 
+                size="small"
+                />
+                <ErrorMessage name="nit" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
                 
               </Stack>
               <Stack>
-                <TextField
-                type="string" 
-                name="address" 
+              <Field 
+                as={ TextField } 
                 label="Address" 
+                type="text" 
+                name="address" 
                 size="small"
                 />
+                 <ErrorMessage name="address" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
               <Stack>
-                <InputLabel htmlFor="indicative">Indicative</InputLabel>
-                <Field type="number" name="indicative" />
-                <ErrorMessage name="indicative" />
+              <Field 
+                as={ TextField } 
+                label="Indicative" 
+                type="number" 
+                name="indicative" 
+                size="small"
+                />
+                 <ErrorMessage name="indicative" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
               <Stack>
-                <InputLabel htmlFor="phoneNumber">Phone Number </InputLabel>
-                <Field type="number" name="phoneNumber" />
-                <ErrorMessage name="phoneNumber" />
+              <Field 
+                as={ TextField } 
+                label="Phone Number" 
+                type="number" 
+                name="phoneNumber" 
+                size="small"
+                />
+                 <ErrorMessage name="phoneNumber" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
               <div align="right">
                 <Button type="submit" variant="contained" color="primary">
@@ -188,6 +205,7 @@ const FormProvider = ({ id: idProvider }) => {
     </>
   );
 };
+
 
 
 

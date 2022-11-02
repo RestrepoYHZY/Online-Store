@@ -29,7 +29,7 @@ const FieldsForm = ({ tools }) => {
           <Grid item xs={4}>
             <Stack>
             <label htmlFor="product">Product: </label>
-            <select  name="product" onChange={ e=>tools.getAProduct(e.target.value) } value={ tools.nameProduct }>
+            <select  name="product" onChange={ e=>tools.getAProduct(e.target.value) } value={ tools.product }>
               <option value="">Choose Product</option>
               { tools.products.map(item=>(
               <option key={ item.id } value={item.id }> { item.nameProduct }</option>
