@@ -24,7 +24,6 @@ const FieldsForm = ({ tools }) => {
               <Select name="customer"   size="small"
                 onChange={(e) => tools.setCustomer(e.target.value)}
                 value={tools.customer}>
-               
                 {tools.customers.map((item) => (
                   <MenuItem key={item.id} value={item.id}>
                     {" "}
@@ -43,12 +42,10 @@ const FieldsForm = ({ tools }) => {
                 name="product" size="small"
                 onChange={(e) => tools.getAProduct(e.target.value)}
                 value={tools.product}
-               
               >
                 
                 {tools.products.map((item) => (
                   <MenuItem key={item.id} value={item.id}>
-                    {" "}
                     {item.nameProduct}
                   </MenuItem>
               ))}

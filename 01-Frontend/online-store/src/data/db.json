@@ -97,7 +97,7 @@
       "price": 2000,
       "amount": 5,
       "expirationDate": "2022-10-21",
-      "provider": "19",
+      "provider": 22,
       "id": 2
     },
     {
@@ -131,6 +131,14 @@
       "expirationDate": "2022-10-13",
       "provider": "12",
       "id": 7
+    },
+    {
+      "nameProduct": "Jalea de mora organica",
+      "price": 1000,
+      "amount": 21,
+      "expirationDate": "2022-11-24",
+      "provider": 21,
+      "id": 8
     }
   ],
   "invoice": [
@@ -408,6 +416,22 @@
         }
       ],
       "id": 18
+    },
+    {
+      "code": "e566a73d-ec0b-4383-b265-ca07f28fe92c",
+      "customer": 3,
+      "date": "2022-11-02",
+      "total": 50000,
+      "products": [
+        {
+          "id": "92204ae6-7ec3-4e74-a4cc-d42eb453b856",
+          "product": 3,
+          "price": 10000,
+          "amount": 5,
+          "subTotal": 50000
+        }
+      ],
+      "id": 19
     }
   ]
 }
