@@ -1,10 +1,11 @@
-import { Button, CircularProgress, InputLabel } from "@mui/material";
+import { Button, CircularProgress, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { Stack } from "@mui/system";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import { getProductById, postProducts, putProducts } from "../../actions/products.action";
 import { useEntities } from "../../context/EntitiesContext";
+import { ErrorMsg } from "../../ValidationForm/ErrorMsg";
 
 const validationSchema = Yup.object().shape({
   nameProduct: Yup.string().required("Sorry, this is required").trim(),
@@ -113,36 +114,62 @@ const FormProduct = ({id:idProduct}) => {
           <Form>
             <Stack spacing={2}>
               <Stack>
-                <InputLabel htmlFor="nameProduct">Name Product</InputLabel>
-                <Field type="text" name="nameProduct" />
-                <ErrorMessage name="nameProduct" render={(msg) => <p>{msg}</p>} />
+              <Field 
+                as={ TextField } 
+                label="Name Product"
+                type="text" 
+                name="nameProduct" 
+                size="small"
+                />
+                <ErrorMessage name="nameProduct" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
+              
+              <Stack>
+              <Field 
+                as={ TextField } 
+                label="Price"
+                type="number" 
+                name="price" 
+                size="small"
+                />
+                <ErrorMessage name="price" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
+              </Stack>
+              <Stack>
+              <Field 
+                as={ TextField } 
+                label="Amount"
+                type="number" 
+                name="amount" 
+                size="small"
+                />
+                <ErrorMessage name="amount" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
+              </Stack>
+              <Stack>
+              <InputLabel htmlFor="expirationDate">Expiration Date</InputLabel>
+                <Field 
+                as={ TextField } 
+                type="date" 
+                name="expirationDate" 
+                size="small"
+                />
+              </Stack>
+              <Stack>
+                <Field 
+                as={ TextField } 
+                label="Providers"
+                select
+                type="date" 
+                name="provider" 
+                size="small"
+                >
 
-              <Stack>
-                <InputLabel htmlFor="price">Price</InputLabel>
-                <Field type="number" name="price" />
-                <ErrorMessage name="price" />
-              </Stack>
-              <Stack>
-                <InputLabel htmlFor="amount">Amount</InputLabel>
-                <Field type="number" name="amount" />
-                <ErrorMessage name="amount" />
-              </Stack>
-              <Stack>
-                <InputLabel htmlFor="expirationDate">Expiration Date</InputLabel>
-                <Field type="date" name="expirationDate" />
-              </Stack>
-              <Stack>
-                <InputLabel htmlFor="provider">Providers</InputLabel>
-                <Field as="select" name="provider">
-                  <option value="">Choose a Provider</option>
                   {providers.map((item) => (
-                    <option key={item.id} value={item.id}>
+                    <MenuItem key={item.id}  value={item.id}> 
                       {item.provider}
-                    </option>
+                    </MenuItem>
                   ))}
-                </Field>
-                <ErrorMessage name="provider" />
+              </Field>
+                <ErrorMessage name="provider" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
               </Stack>
               <div align="right">
                 <Button type="submit" variant="contained" color="primary">
@@ -150,6 +177,7 @@ const FormProduct = ({id:idProduct}) => {
                 </Button>
               </div>
             </Stack>
+            
           </Form>
         )}
       </Formik>
