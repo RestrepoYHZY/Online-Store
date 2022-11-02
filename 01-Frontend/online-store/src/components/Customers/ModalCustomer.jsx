@@ -49,7 +49,7 @@ const ModalCustomer = ({ id }) => {
 
       <Modal open={open} onClose={handleOpen}>
         <Box sx={styleModal}>
-          <Typography variant="h6" align="center">
+          <Typography variant= "h5" style={{margin: "0.5em"}} align="center">
             {!id ? "Add" : "Edit"} Customer
           </Typography>
           {success?
