@@ -9,12 +9,16 @@ import {
 } from "@mui/material";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { Stack } from "@mui/system";
+import { useNavigate } from "react-router-dom";
 
 import "./index.css";
 
 import { Link } from "react-router-dom";
 
 const NavBarPage = () => {
+
+  const navigation = useNavigate();
+
   const [anchorElm, setAnchoElm] = useState(null);
   const [open, setOpen] = useState(false);
 
@@ -37,6 +41,7 @@ const NavBarPage = () => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={() => navigation("/NewInvoce")}
           >
             <IoStorefrontOutline />
           </IconButton>
