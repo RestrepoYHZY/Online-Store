@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { Button, CircularProgress, InputLabel, Stack } from "@mui/material";
+import { Button, CircularProgress, InputLabel, Stack, TextField } from "@mui/material";
 import * as Yup from "yup";
 import { useEntities } from "../../context/EntitiesContext";
 import {
@@ -8,6 +8,7 @@ import {
   postCustomer,
   putCustomer,
 } from "../../actions/customer.action";
+import { ErrorMsg } from "../../ValidationForm/ErrorMsg";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Sorry, this is required").trim(),
@@ -147,36 +148,37 @@ const FormCustomer = ({ id: idCustomer }) => {
             <Form>
               <Stack spacing={2}>
                 <Stack>
-                  <InputLabel htmlFor="name">Name Customer</InputLabel>
-                  <Field type="text" name="name" />
-                  <ErrorMessage name="name" />
+               
+                  <Field as={ TextField }  label="Name Customer"  type="text" name="name"  size="small" />
+                  <ErrorMessage name="name" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
                 </Stack>
                 <Stack>
-                  <InputLabel htmlFor="lastName">Last Name </InputLabel>
-                  <Field type="text" name="lastName" />
-                  <ErrorMessage name="lastName" />
-                </Stack>
-
-                <Stack>
-                  <InputLabel htmlFor="document">Document</InputLabel>
-                  <Field type="text" name="document" />
-                  <ErrorMessage name="document" />
-                </Stack>
-                <Stack>
-                  <InputLabel htmlFor="indicative">Indicative</InputLabel>
-                  <Field type="number" name="indicative" />
-                  <ErrorMessage name="indicative" />
+                
+                  <Field as={ TextField }  type="text" label="Last Name"  name="lastName" size="small"/>
+                  <ErrorMessage name="lastName" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
+                
                 </Stack>
 
                 <Stack>
-                  <InputLabel htmlFor="phoneNumber">Phone Number</InputLabel>
-                  <Field type="number" name="phoneNumber" />
-                  <ErrorMessage name="phoneNumber" />
+            
+                  <Field as={ TextField }  type="text" name="document" label="Document" size="small" />
+                  <ErrorMessage name="document" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
                 </Stack>
                 <Stack>
-                  <InputLabel htmlFor="email">Mail</InputLabel>
-                  <Field type="email" name="email" />
-                  <ErrorMessage name="email" />
+                
+                  <Field as={ TextField } type="number" label="Indicative" name="indicative" size="small" />
+                  <ErrorMessage name="indicative" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
+                </Stack>
+
+                <Stack>
+                 
+                  <Field as={ TextField } type="number" label="Phone Number" name="phoneNumber" size="small"/>
+                  <ErrorMessage name="phoneNumber" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
+                </Stack>
+                <Stack>
+       
+                  <Field as={ TextField } type="email" name="email" label="Mail" size="small" />
+                  <ErrorMessage name="email" render={(msg)=>(<ErrorMsg msg={msg}/>)} />
                 </Stack>
                 <div align="right">
                   <Button type="submit" variant="contained" color="primary">
