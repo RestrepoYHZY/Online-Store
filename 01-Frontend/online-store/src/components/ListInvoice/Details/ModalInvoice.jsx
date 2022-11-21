@@ -30,7 +30,7 @@ const ModalInvoice = ({data}) => {
 
       <Modal open={modal} onClose={openCloseModal}>
         <Box sx={styleModalInvoice}>
-        <Typography variant="h5" textAlign="center" style={{marginTop: "0.5em"}}>Invoice Detail</Typography>
+        <Typography variant="h5" textAlign="center">Invoice Detail</Typography>
         <TableTotal data={ data } />
           <TableProdInvoice data={ data } />
          <Box  align="end"  style={{ marginTop: "1em"  }}>

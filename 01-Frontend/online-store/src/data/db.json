@@ -97,6 +97,14 @@
       "email": "correo@correo.com",
       "phoneNumber": "+32 54587590553",
       "id": 7
+    },
+    {
+      "name": "Funalito ",
+      "lastName": "Londoño Ramirez",
+      "document": "1083982",
+      "email": "funalito@correo.com",
+      "phoneNumber": "+33 3107858565",
+      "id": 8
     }
   ],
   "products": [
